@@ -81,6 +81,49 @@
     <!-- Mientras se manipule una sola propiedad de dimensiones, la relacion de aspecto de la imagen se mantiene. -->
     <img src="img/coffee.jpg" alt="coffee" width="300" height="300" />
 
+    <hr />
+
+    <!-- La etiqueta form encapsula datos para ser posteriormente enviados a un servidor.
+         La propiedad acticion espesifica la ruta dentro de nuestro servidor donde se enviaran los datos.
+         Con el method GET los valores de los campos se envian a traves de la url y maximo se pueden enviar 250 caracteres.
+         Con el method POST los valores de los campos se envian a traves del header y se pueden ver accediendo a inspecionar->network->valor de action->headers/payload. -->
+    <!-- Si la etiqueta action no tiene valor los datos se reenvian sobre la misma pagina -->
+    <!-- Siempre enviar datos usando certificados que se encargeuen se encriptar todas las conexiones -->
+    <form action="/formulario" method="post">
+        <!-- Etiqueta label permite indicarle al usuario que informacion se espera en la posterior etiqueta input. -->
+        <!-- La propiedad for e id estan entrelazadas, indica que la etiqueta for apunta a la etiqueta id siempre y en cuanto tengan el mismo valor.
+             En el ejemplo se aprecia que si presiono sobre la etiqueta label hago focus sobre la etiqueta input posterior, gracias a los atributos for e id. -->
+        <label for="name">Nombre: </label>
+        <!-- Etiqueta input permite al usuario ingresar informacion, no tiene que estar necesariamente dentro de un bloque form. -->
+        <!-- Cuando se envien los datos del formulario a un servidor, el servidor interpreta los datos del formulario con el nombre que le enviemos en la propiedad name.
+             Cuando se envien los datos el servidor recibe un objeto de formulario que contiene una llave y un valor, la llave tiene el mismo valor que el de la propiedad name
+             y el valor sera el contenido de nuestra etiqueta o campo. -->
+        <!-- La etiqueta placeholder es otro indicativo para el usuario similar a la etiqueta de label, que le muestra al usuario que puede poner en la etiqueta input. -->
+        <!-- La etiqueta input se comporta de forma diferente dependiendo del valor que contenga la proiedad type.
+             El valor por defecto de type es text, pero contiene muchos mas valores que se puedes buscar, estudiar y comprender. -->
+        <!-- Si una etiqueta no tiene la variable name, esta no se envia al servidor, -->
+        <!-- Los valores por defecto se le agregan a los input usando la propiedad value -->
+        <input type="text" id="name" name="nombre" placeholder="Juan Sebastian" />
+        <input type="email" placeholder="juan@mail.net" />
+        <input type="password" placeholder="contraseña de juan" />
+        <input type="radio" />
+        <input type="checkbox" />
+        <input type="file" />
+        <br />
+        <br />
+        <label for="comentario">Comentario: </label>
+        <!-- La etiqueta textarea tiene propiedades similares a la de input. 
+             Se le puede especificar un tamaño diferente por defecto con las propiedades rows y cols, para filas y columnas respectivamente.
+             Esta etiqueta se redimenciona en la pensataña del navegador. -->
+        <!-- El valor por defecto de un textarea se agrega en el contenido de la etiqueta -->
+        <textarea rows="10" cols="110" id="comentario" placeholder="Comentarios de juan" name="comentario"></textarea>
+        <br />
+        <br />
+        <!-- La etiqeuta input con el valor submit en la propiedad type, va a tomar todos los valores que se encuentren dentro de los campos de nuestros formularios y los va a enviar al servidor.
+             El donde y como se envian se especifica dentro de la etiqueta de form -->
+        <input type="submit">
+    </form>
+
 </body>
 
 </html>
