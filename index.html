@@ -6,7 +6,7 @@
      Consiste en etiquetas que indican, parrafos, titulos, vinculos, etc. -->
 
 <!-- COMO FUNCIONA HTML? -->
-<!-- Estructura de arbol, donde se tiene una raiz equivalente a un nodo principal al que se le pueden agregar mas nodos hijos. -->
+<!-- Estructura de arbol, donde se tiene una raiz equivalente a un nodo principal al que se le pueden agregar mas nodos hijos, nietos, etc. -->
 
 <!-- QUE ES UNA ETIQUETA? -->
 <!-- Una etiqueta consta de tres partes: la apertura, el contenido y el cierre. -->
@@ -27,31 +27,31 @@
 </html>
 -->
 
-<!-- PROYECTO PRIMARIO -->
-<!-- El atajo de teclado !+tab en vscode genera todo el codigo base de un html. -->
-<!-- Los archivos HTML son extension .html y el primer archivo debe llamarse por obligacion y convencion index.html, eso le dice al editor que es el archivo de entrada a nuestra web. -->
-<!-- Los comentarios son leidos por el navegador pero los ignora, esto significa que pueden verse desde el apartado de inspeccionar de los exploradores. -->
+<!-- NOTAS -->
+<!-- El atajo de teclado !+tab en vscode genera todo el codigo base de un html.
+     Los archivos HTML son extension .html y el primer archivo debe llamarse por obligacion y convencion index.html, eso le dice al editor que es el archivo de entrada a nuestra web.
+     Los comentarios son leidos por el navegador pero los ignora, esto significa que pueden verse desde el apartado de inspeccionar de los exploradores. -->
 
 <!-- DOCTYPE html le indica al explorador que nuestro codigo es html5, de no tenerlo el explorador entra en modo Quirks Modeqz donde trata de interpretar el codigo como si fuera codigo antiguo, de los años 90. -->
 <!DOCTYPE html>
 
-<!-- Etiqueta raiz de todo nuestro documento HTML. -->
+<!-- Etiqueta raiz de todo nuestro documento HTML: html. -->
 
 <html>
 
-<!-- Bloque que contiene informacion no necesariamente visible al usuario pero que permite agregar mas contenido a la pagina. -->
+<!-- Bloque que contiene informacion no necesariamente visible al usuario pero que permite agregar mas contenido a la pagina: head -->
 
 <head>
     <title>Mi primera web</title>
 </head>
 
-<!-- Bloque de toda la informacion visible al usuario. -->
+<!-- Bloque de toda la informacion visible al usuario: body. -->
 
 <body>
 
-    <!-- La etiqueta de heading se utiliza para poder entregarle un titulo al contenido que viene justamente despues de el. -->
-    <!-- Los motores de busqueda utilizan esas etiquetas para indexar el contenido dentro de los mismos motores de busqueda. -->
-    <!-- Importante usar las etiquetas de heading no solo para mostrar un texto mas grande si no para indicar titulos en la web. -->
+    <!-- La etiqueta de heading se utiliza para poder entregarle un titulo al contenido que viene justamente despues de el.
+         Los motores de busqueda utilizan esas etiquetas para indexar el contenido dentro de los mismos motores de busqueda.
+         Importante usar las etiquetas de heading no solo para mostrar un texto mas grande si no para indicar titulos en la web. -->
     <h1>Mi primer heading</h1>
     <h2>Mi segundo heading</h2>
     <h3>Mi tercer heading</h3>
@@ -77,32 +77,31 @@
     <p></p><a href="http://www.google.com">Go To Google</a> en la misma pestaña de exploracion</p>
     <p></p><a target="_blank" href="http://www.google.com">Go To Google</a> en una nueva pestaña de exploracion</p>
 
-    <!-- Mostrar imagenes al usuario, la propiedad src recibe tanto links como direcciones en nuestra unidad de almacenamiento local. -->
-    <!-- Mientras se manipule una sola propiedad de dimensiones, la relacion de aspecto de la imagen se mantiene. -->
+    <!-- Mostrar imagenes al usuario, la propiedad src recibe tanto links como direcciones en nuestra unidad de almacenamiento local.
+         Mientras se manipule una sola propiedad de dimensiones, la relacion de aspecto de la imagen se mantiene. -->
     <img src="img/coffee.jpg" alt="coffee" width="300" height="300" />
 
     <hr />
 
     <!-- La etiqueta form encapsula datos para ser posteriormente enviados a un servidor.
-         La propiedad acticion espesifica la ruta dentro de nuestro servidor donde se enviaran los datos.
+         La propiedad action espesifica la ruta dentro de nuestro servidor donde se enviaran los datos.
          Con el method GET los valores de los campos se envian a traves de la url y maximo se pueden enviar 250 caracteres.
-         Con el method POST los valores de los campos se envian a traves del header y se pueden ver accediendo a inspecionar->network->valor de action->headers/payload. -->
-    <!-- Si la etiqueta action no tiene valor los datos se reenvian sobre la misma pagina -->
-    <!-- Siempre enviar datos usando certificados que se encargeuen se encriptar todas las conexiones -->
+         Con el method POST los valores de los campos se envian a traves del header y se pueden ver accediendo a inspecionar->network->valor de action->headers/payload.
+         Si la etiqueta action no tiene valor los datos se reenvian sobre la misma pagina.
+         Importante siempre enviar datos usando certificados que se encargeuen se encriptar todas las conexiones. -->
     <form action="/formulario" method="post">
         <!-- Etiqueta label permite indicarle al usuario que informacion se espera en la posterior etiqueta input. -->
         <!-- La propiedad for e id estan entrelazadas, indica que la etiqueta for apunta a la etiqueta id siempre y en cuanto tengan el mismo valor.
              En el ejemplo se aprecia que si presiono sobre la etiqueta label hago focus sobre la etiqueta input posterior, gracias a los atributos for e id. -->
         <label for="name">Nombre: </label>
-        <!-- Etiqueta input permite al usuario ingresar informacion, no tiene que estar necesariamente dentro de un bloque form. -->
+        <!-- Etiqueta input permite al usuario ingresar informacion. -->
         <!-- Cuando se envien los datos del formulario a un servidor, el servidor interpreta los datos del formulario con el nombre que le enviemos en la propiedad name.
-             Cuando se envien los datos el servidor recibe un objeto de formulario que contiene una llave y un valor, la llave tiene el mismo valor que el de la propiedad name
-             y el valor sera el contenido de nuestra etiqueta o campo. -->
+             Cuando se envien los datos el servidor recibe un objeto de formulario que contiene una llave y un valor, la llave tiene el mismo valor que el de la propiedad name y el valor sera el contenido de nuestra etiqueta o campo.
+             Si una etiqueta no tiene la variable name, esta no se envia al servidor. -->
         <!-- La etiqueta placeholder es otro indicativo para el usuario similar a la etiqueta de label, que le muestra al usuario que puede poner en la etiqueta input. -->
         <!-- La etiqueta input se comporta de forma diferente dependiendo del valor que contenga la proiedad type.
              El valor por defecto de type es text, pero contiene muchos mas valores que se puedes buscar, estudiar y comprender. -->
-        <!-- Si una etiqueta no tiene la variable name, esta no se envia al servidor, -->
-        <!-- Los valores por defecto se le agregan a los input usando la propiedad value -->
+        <!-- Los valores por defecto se le agregan a los input usando la propiedad value. -->
         <input type="text" id="name" name="nombre" placeholder="Juan Sebastian" />
         <input type="email" placeholder="juan@mail.net" />
         <input type="password" placeholder="contraseña de juan" />
@@ -114,12 +113,12 @@
         <label for="comentario">Comentario: </label>
         <!-- La etiqueta textarea tiene propiedades similares a la de input. 
              Se le puede especificar un tamaño diferente por defecto con las propiedades rows y cols, para filas y columnas respectivamente.
-             Esta etiqueta se redimenciona en la pensataña del navegador. -->
-        <!-- El valor por defecto de un textarea se agrega en el contenido de la etiqueta -->
+             Esta etiqueta se redimenciona en la pensataña del navegador.
+             El valor por defecto de un textarea se agrega en el contenido de la etiqueta. -->
         <textarea rows="10" cols="110" id="comentario" placeholder="Comentarios de juan" name="comentario"></textarea>
         <br />
         <br />
-        <!-- La etiqeuta input con el valor submit en la propiedad type, va a tomar todos los valores que se encuentren dentro de los campos de nuestros formularios y los va a enviar al servidor.
+        <!-- La etiqueta input con el valor submit en la propiedad type, va a tomar todos los valores que se encuentren dentro de los campos de nuestro formulario y los va a enviar al servidor.
              El donde y como se envian se especifica dentro de la etiqueta de form -->
         <input type="submit">
     </form>
