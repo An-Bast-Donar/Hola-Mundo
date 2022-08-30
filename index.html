@@ -1,0 +1,96 @@
+<!-- QUE ES HTML? -->
+<!-- Significa Hyper Text Markup Language.
+     Es el lenguaje estandar para crear paginas web.
+     Describe la estructura de las paginas web. 
+     Le indica al explorador que y como mostrar el contenido en la web.
+     Consiste en etiquetas que indican, parrafos, titulos, vinculos, etc. -->
+
+<!-- COMO FUNCIONA HTML? -->
+<!-- Estructura de arbol, donde se tiene una raiz equivalente a un nodo principal al que se le pueden agregar mas nodos hijos. -->
+
+<!-- QUE ES UNA ETIQUETA? -->
+<!-- Una etiqueta consta de tres partes: la apertura, el contenido y el cierre. -->
+
+<!-- ESTRUCTURA DEL CODIGO HTML -->
+<!--
+<html>
+
+    <head>
+        <title>El titulo de la pagina</title>
+    </head>
+
+    <body>
+        <h1>Un heading o titulo</h1>
+        <p>Un parrafo</p>
+    </body>
+
+</html>
+-->
+
+<!-- PROYECTO PRIMARIO -->
+<!-- El atajo de teclado !+tab en vscode genera todo el codigo base de un html. -->
+<!-- Los archivos HTML son extension .html y el primer archivo debe llamarse por obligacion y convencion index.html, eso le dice al editor que es el archivo de entrada a nuestra web. -->
+<!-- Los comentarios son leidos por el navegador pero los ignora, esto significa que pueden verse desde el apartado de inspeccionar de los exploradores. -->
+
+<!-- DOCTYPE html le indica al explorador que nuestro codigo es html5, de no tenerlo el explorador entra en modo Quirks Modeqz donde trata de interpretar el codigo como si fuera codigo antiguo, de los años 90. -->
+<!DOCTYPE html>
+
+<!-- Etiqueta raiz de todo nuestro documento HTML. -->
+
+<html>
+
+<!-- Bloque que contiene informacion no necesariamente visible al usuario pero que permite agregar mas contenido a la pagina. -->
+
+<head>
+    <title>Mi primera web</title>
+</head>
+
+<!-- Bloque de toda la informacion visible al usuario. -->
+
+<body>
+
+    <!-- La etiqueta de heading se utiliza para poder entregarle un titulo al contenido que viene justamente despues de el. -->
+    <!-- Los motores de busqueda utilizan esas etiquetas para indexar el contenido dentro de los mismos motores de busqueda. -->
+    <!-- Importante usar las etiquetas de heading no solo para mostrar un texto mas grande si no para indicar titulos en la web. -->
+    <h1>Mi primer heading</h1>
+    <h2>Mi segundo heading</h2>
+    <h3>Mi tercer heading</h3>
+    <h4>Mi cuarto heading</h4>
+    <h5>Mi quinto heading</h5>
+    <h6>Mi sexto heading</h6>
+
+    <!-- La forma correcta de separar un parrafo de otro es agregando otra etique p. -->
+    <p>Esto es un parrafo de ejemplo que contiene texto muy corto</p>
+    <p>Esto es un parrafo de ejemplo que contiene texto muy corto</p>
+
+    <!-- La etiqueta spam selecciona un contenido silenciosamente para posteriormente poder ser referenciado para diferentes usos. -->
+    <p>Esto es un <span style="color:blue">parrafo de ejemplo</span> que contiene texto muy corto</p>
+
+    <!-- La etiqueta br agrega saltos de linea en el contenido de nuestro codigo, se pueden agregar cuantas como se requieran. -->
+    <p>Esto es un ejemplo <br />de 1 salto de linea</p>
+    <p>Esto es un ejemplo <br /><br />de 2 salto de linea</p>
+    <p>Esto es un ejemplo <br /><br /><br />de 3 salto de linea</p>
+
+    <hr />
+
+    <!-- La etiqueta a es para hipervinculos y debe tener la propiedad href. -->
+    <p></p><a href="http://www.google.com">Go To Google</a> en la misma pestaña de exploracion</p>
+    <p></p><a target="_blank" href="http://www.google.com">Go To Google</a> en una nueva pestaña de exploracion</p>
+
+    <!-- Mostrar imagenes al usuario, la propiedad src recibe tanto links como direcciones en nuestra unidad de almacenamiento local. -->
+    <!-- Mientras se manipule una sola propiedad de dimensiones, la relacion de aspecto de la imagen se mantiene. -->
+    <img src="img/coffee.jpg" alt="coffee" width="300" height="300" />
+
+</body>
+
+</html>
+
+<!-- BUENAS PRACTICAS -->
+<!-- Convencion XHTML -->
+<!-- Cerrar todas las etiquetas abiertas para evitar insercion de codigo, incluso las etiquetas vacias. -->
+<!-- Nombres de etiquetas y propiedades siempre en minuscula. -->
+<!-- Valor de las propiedades siempre encerrado entre comillas. -->
+<!-- El valor de las propiedades siempre en minuscula, incluso si el valor de la propiedad es identico al nombre de la misma. -->
+<!-- Eliminar espacios en blanco innecesarios dentro de los valores de un atributo. -->
+<!-- El codigo javascript debe ir dentro de etiquetas especiales para evitar que el navegador interprete de forma erronea caracteres como & y < -->
+<!-- La identificacion de etiquetas en especifico es con id y no con name -->
