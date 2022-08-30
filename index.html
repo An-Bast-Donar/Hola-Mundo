@@ -29,6 +29,7 @@
 
 <!-- NOTAS -->
 <!-- El atajo de teclado !+tab en vscode genera todo el codigo base de un html.
+     Con el atajo de teclado Ctrl+Space pueden salir ayuda de codificacion en vscode.
      Los archivos HTML son extension .html y el primer archivo debe llamarse por obligacion y convencion index.html, eso le dice al editor que es el archivo de entrada a nuestra web.
      Los comentarios son leidos por el navegador pero los ignora, esto significa que pueden verse desde el apartado de inspeccionar de los exploradores. -->
 
@@ -119,9 +120,85 @@
         <br />
         <br />
         <!-- La etiqueta input con el valor submit en la propiedad type, va a tomar todos los valores que se encuentren dentro de los campos de nuestro formulario y los va a enviar al servidor.
-             El donde y como se envian se especifica dentro de la etiqueta de form -->
-        <input type="submit">
+             El donde y como se envian se especifica dentro de la etiqueta de form.
+             La etiqueta input no puede poseer contenido, corroborado añadiendo contenido y verificando que el contenido queda por fuera del campo creado en la web, por ende es posible pero inviable usarlo como boton de envio -->
+        <!-- input type="submit" / -->
+        <!-- La etiqueta button tiene la propiedad type y puede tomar tres valores diferentes, submit, reset y button. 
+             Dentro de un formulario submit, es el valor por defecto y se usa para enviar datos.
+             El valor reset es para restaurar el formulario a sus valores por defecto.
+             El valor button debe ser configurado con javascript.
+             La etiqueta button es mas personalizable que la input por lo que resulta mas viable para usarla como submit, se le puede agregar contenido de texto o incluso otra etiqeuta como una imagen. -->
+        <button type="button">Tipo boton</button>
+        <button type="reset">Tipo reset</button>
+        <button type="submit">Tipo submit</button>
     </form>
+
+    <hr />
+
+    <!-- La etiqueta ul significa lista no ordenada, indica que los items de esta lista apareceran con un punto como viñeta. -->
+    <ul>
+        <!-- La etiqueta li significa item de la lista -->
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+        <li>Elemento 4</li>
+        <li>Elemento 5</li>
+    </ul>
+
+    <!-- La etiqueta ol significa lista ordenada, indica que los items de esta lista apareceran con una numeracion como viñeta. -->
+    <ol>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+        <li>Elemento 4</li>
+        <li>Elemento 5</li>
+    </ol>
+
+    <ol>
+        <!-- La propiedad value cambia el valor de la numeracion en mi lista y los consecutivos a esta. -->
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li value="5">Elemento 3</li>
+        <li>Elemento 4</li>
+        <li>Elemento 5</li>
+    </ol>
+
+    <ol>
+        <!-- En la etiqueta li, la propiedad style con la opcion configurada cambia el tipo de numeracion para ese item de la lista. -->
+        <li style="list-style-type: lower-alpha;">Elemento 1</li>
+        <li style="list-style-type: lower-alpha;">Elemento 2
+            <br />
+            <ol>
+                <li style="list-style-type: lower-roman;">Elemento 1</li>
+                <li style="list-style-type: lower-roman;">Elemento 2</li>
+                <li style="list-style-type: lower-roman;">Elemento 3
+                    <br />
+                    <!-- En la etiqueta ul/ol, la propiedad style con la opcion configurada cambia el tipo de numeracion para los items de la lista.
+                         Si no se añade estilo a la lista o a los items, el estilo sera el de por defecto para listas ordenadas o no ordenadas -->
+                    <ol>
+                        <li>Elemento 1</li>
+                        <li>Elemento 2</li>
+                        <li>Elemento 3</li>
+                        <li>Elemento 4</li>
+                        <li>Elemento 5</li>
+                    </ol>
+                </li>
+                <li style="list-style-type: lower-roman;">Elemento 4</li>
+                <li style="list-style-type: lower-roman;">Elemento 5</li>
+            </ol>
+        </li>
+        <li style="list-style-type: lower-alpha;">Elemento 3</li>
+        <li style="list-style-type: lower-alpha;">Elemento 4</li>
+        <li style="list-style-type: lower-alpha;">Elemento 5</li>
+    </ol>
+
+    <ul style="list-style-type: square;">
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+        <li>Elemento 4</li>
+        <li>Elemento 5</li>
+    </ul>
 
 </body>
 
