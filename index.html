@@ -31,7 +31,9 @@
 <!-- El atajo de teclado !+tab en vscode genera todo el codigo base de un html.
      Con el atajo de teclado Ctrl+Space pueden salir ayuda de codificacion en vscode.
      Los archivos HTML son extension .html y el primer archivo debe llamarse por obligacion y convencion index.html, eso le dice al editor que es el archivo de entrada a nuestra web.
-     Los comentarios son leidos por el navegador pero los ignora, esto significa que pueden verse desde el apartado de inspeccionar de los exploradores. -->
+     Los comentarios son leidos por el navegador pero los ignora, esto significa que pueden verse desde el apartado de inspeccionar de los exploradores.
+     La propiedad id le da un identificar UNICO a una etiqueta para poderla idenficar frente a un js o un css.
+     La propiedad class da un identificador GENERAL a una o mas etiquetas para poderla identificar frente a un js o un css. -->
 
 <!-- DOCTYPE html le indica al explorador que nuestro codigo es html5, de no tenerlo el explorador entra en modo Quirks Modeqz donde trata de interpretar el codigo como si fuera codigo antiguo, de los años 90. -->
 <!DOCTYPE html>
@@ -44,6 +46,15 @@
 
 <head>
     <title>Mi primera web</title>
+    <!-- La etiqueta style controla el aspecto de diferentes etiquetas en la web.
+         Para este ejemplo se escribe el nombre de las etiquetas a modificar y las caracteristicas a modificar. -->
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
 </head>
 
 <!-- Bloque de toda la informacion visible al usuario: body. -->
@@ -74,7 +85,9 @@
 
     <hr />
 
-    <!-- La etiqueta a es para hipervinculos y debe tener la propiedad href. -->
+    <!-- La etiqueta a es para hipervinculos y debe tener la propiedad href.
+         La propiedad href recibe un link o un id -->
+    <p></p><a href="#parrafodiv">Go To Parrafo Div</a> en la misma pestaña de exploracion</p>
     <p></p><a href="http://www.google.com">Go To Google</a> en la misma pestaña de exploracion</p>
     <p></p><a target="_blank" href="http://www.google.com">Go To Google</a> en una nueva pestaña de exploracion</p>
 
@@ -199,6 +212,58 @@
         <li>Elemento 4</li>
         <li>Elemento 5</li>
     </ul>
+
+    <hr />
+
+    <!-- La tabla se divide en filas y columnas, cada columna puede tener una cabecera.
+         Se puede distriburir las columnas de una tabla tanto como se quiera, tener cuidado de estructurar filas y columnas segun el proyecto. -->
+    <table style="width: 500px;">
+        <!-- La etiqueta thead sirve para agrupar cabeceras y que algunos exploradores las muestres estaticas al momento de hacer un scroll. -->
+        <thead>
+            <!-- La etiqueta tr significa table row, osea fila de la tabla. 
+                 No necesariamente la etiqueta debe estar dentro de un thead o algun otro agrupador de filas.-->
+            <tr>
+                <!-- La etiqueta th es para indicar una cabecera y el contenido se encuentra centrado. -->
+                <th>Producto</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        <!-- La etiqueta tbody sirve para agrupar el cuerpo de la tabla y que algunos exploradores realicen un scroll en la misma. -->
+        <tbody>
+            <tr>
+                <!-- La etiqueta td se usa para definir elementos estandares dentro de las celdas de la tabla -->
+                <td>Musica Beats</td>
+                <td>Free</td>
+            </tr>
+            <tr>
+                <td>Juan esta feliz</td>
+                <td>$8.000.000,00</td>
+            </tr>
+            <tr>
+                <td>Juan super dupermente feliz</td>
+                <td>$22.000.000,00</td>
+            </tr>
+            <tr>
+                <td>Juan supremamente feliz y satifecho</td>
+                <td>$96.000.000,00</td>
+            </tr>
+        </tbody>
+        <!-- La etiqueta tfoot sirve para agrupar el pie de la tabla y mantenerlo fijo segun el scroll. -->
+        <tfoot>
+            <tr>
+                <td>TOTAL PARA UN JUAN MUY FELIZ:</td>
+                <td>$126.000.000</td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <hr />
+
+    <!-- La etiqueta div sirve para agrupar contenido en html.
+         en la actualidad las etiquetas section y article son mas usadas que la div y generan mejor lectura del codigo -->
+    <div>
+        <p id="parrafodiv">Esto es un parrafo dentro de una etiqueta div</p>
+    </div>
 
 </body>
 
