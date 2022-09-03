@@ -1,0 +1,61 @@
+/*
+¿QUE ES CSS?
+Significa Cascading Style Sheets.
+Describe la presentacion de docs HTML.
+Un doc HTML puede tener multiples CSS.
+*/
+
+/*
+NOTAS
+CSS funciona en base a selectores que referencian un unico o varios elementos dentro de nuestro HTML.
+Los que se escriba de ultimo en nuestro archivo css tiene proridad sobre lo que va antes.
+Una etiqueta en el HTML puede tener multiples clases de css.
+*/
+
+/*Aplica estilo a la etiqueta body*/
+body {
+    background-color: azure;
+}
+
+/*Aplica estilo a la etiqueta con id titulo*/
+#titulo {
+    color: brown;
+}
+
+.especial {
+    color: blue;
+}
+
+/*Aplica estilo a las etiquetas con clase parrafo*/
+.parrafo {
+    color: chocolate;
+}
+
+/*Aplica estilo a las etiquetas p con clase parrafo. sirve para cuando una clase es compartida por etiquetas de diferente tipo*/
+p.parafo {}
+
+p.especial {}
+
+/*Las etiqeutas p dentro de un div*/
+div p {
+    color: chartreuse;
+}
+
+/*Los h2 dentro de las etiquetas div*/
+div h2 {}
+
+/*Los h2 dentro de las etiquetas div y todos los h3*/
+div h2,
+h3 {}
+
+/*Los h2 dentro de las etiquetas div y los h3 dentro de las etiquetas div*/
+div h2,
+div h3 {}
+
+/*
+Selecciona todos los elementos dentro del html
+Las propiedades aplican a los elementos que no tengan definidas dichas propiedades en otro selector css
+*/
+* {
+    font-size: 24px
+}
