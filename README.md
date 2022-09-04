@@ -1,4 +1,4 @@
 # Hola-Mundo
-Aprender HTML Basico - Expert
+Aprender HTML y CSS Basico - Expert
 
-Proyecto para aprender HTML de basico a experto
+Proyecto para aprender HTML y CSS de basico a experto
