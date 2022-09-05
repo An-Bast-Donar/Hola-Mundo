@@ -30,8 +30,8 @@
 <!-- NOTAS -->
 <!-- El atajo de teclado !+tab en vscode genera todo el codigo base de un html.
      Con el atajo de teclado Ctrl+Space pueden salir ayuda de codificacion en vscode.
-     Los archivos HTML son extension .html y el primer archivo debe llamarse por obligacion y convencion index.html, eso le dice al editor que es el archivo de entrada a nuestra web.
-     Los comentarios son leidos por el navegador pero los ignora, esto significa que pueden verse desde el apartado de inspeccionar de los exploradores.
+     Los archivos HTML son extension .html y el primer archivo debe llamarse por obligacion y convencion index.html, eso le dice al servidor que es el archivo de entrada a nuestra web.
+     Los comentarios son leidos por el navegador pero los ignora, esto significa que pueden verse desde el apartado de inspeccionar en los exploradores.
      La propiedad id le da un identificar UNICO a una etiqueta para poderla idenficar frente a un js o un css.
      La propiedad class da un identificador GENERAL a una o mas etiquetas para poderla identificar frente a un js o un css. -->
 
@@ -92,7 +92,8 @@
     <p></p><a target="_blank" href="http://www.google.com">Go To Google</a> en una nueva pestaña de exploracion</p>
 
     <!-- Mostrar imagenes al usuario, la propiedad src recibe tanto links como direcciones en nuestra unidad de almacenamiento local.
-         Mientras se manipule una sola propiedad de dimensiones, la relacion de aspecto de la imagen se mantiene. -->
+         Mientras se manipule una sola propiedad de dimensiones, la relacion de aspecto de la imagen se mantiene.
+         Mientras no se pongan unidades en la medida, las uidades por defecto son px. -->
     <img src="img/coffee.png" alt="coffee" width="300" height="300" />
 
     <hr />
@@ -102,7 +103,7 @@
          Con el method GET los valores de los campos se envian a traves de la url y maximo se pueden enviar 250 caracteres.
          Con el method POST los valores de los campos se envian a traves del header y se pueden ver accediendo a inspecionar->network->valor de action->headers/payload.
          Si la etiqueta action no tiene valor los datos se reenvian sobre la misma pagina.
-         Importante siempre enviar datos usando certificados que se encargeuen se encriptar todas las conexiones. -->
+         Importante siempre enviar datos usando certificados que se encargeuen de encriptar todas las conexiones. -->
     <form action="/formulario" method="post">
         <!-- Etiqueta label permite indicarle al usuario que informacion se espera en la posterior etiqueta input. -->
         <!-- La propiedad for e id estan entrelazadas, indica que la etiqueta for apunta a la etiqueta id siempre y en cuanto tengan el mismo valor.
@@ -114,7 +115,7 @@
              Si una etiqueta no tiene la variable name, esta no se envia al servidor. -->
         <!-- La etiqueta placeholder es otro indicativo para el usuario similar a la etiqueta de label, que le muestra al usuario que puede poner en la etiqueta input. -->
         <!-- La etiqueta input se comporta de forma diferente dependiendo del valor que contenga la proiedad type.
-             El valor por defecto de type es text, pero contiene muchos mas valores que se puedes buscar, estudiar y comprender. -->
+             El valor por defecto de type es text, pero contiene muchos mas valores que se pueden buscar, estudiar y comprender. -->
         <!-- Los valores por defecto se le agregan a los input usando la propiedad value. -->
         <input type="text" id="name" name="nombre" placeholder="Juan Sebastian" />
         <input type="email" placeholder="juan@mail.net" />

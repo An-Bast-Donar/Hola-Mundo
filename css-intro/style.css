@@ -118,7 +118,7 @@ Las propiedades aplican a los elementos que no tengan definidas dichas propiedad
 /*
 UNIDADES DE MEDIDA
 px: pixel, unidad minima dentro de la web para poder mostrar algo, trata de hacer referencia a exactametne un cuadrado fisico en pantalla que compone la imagen, pero dependiendo de la pantalla realmente la unidad puede hacer referencia a mas de un pixel fisico.
-cm(centimetro), mm(milimetro), in(pulgada), pt(puntos, un setenta y dosambo de pulgada), pc(picas, 12 puntos): medidas "absolutas" que no van a cambiar, no recomendable por que los dispositivos muestran estas medidas de diferente forma.
-em: tamaño de la fuente del contenido de la etiqueta, medida relativa al tamaño del contenido
-rem: tamaño de la fuente de nuestra etiqueta raiz, osea la etiqueta html, por defecto el tamaño de la fuente en html es 16px, a menos que se cambie
+cm(centimetro), mm(milimetro), in(pulgada), pt(puntos, un setenta y doceabo de pulgada), pc(picas, 12 puntos): medidas "absolutas" que no van a cambiar, no recomendable por que los dispositivos muestran estas medidas de diferente forma.
+em: tamaño de la fuente del contenido de la etiqueta, medida relativa al tamaño del contenido.
+rem: tamaño de la fuente de nuestra etiqueta raiz, osea la etiqueta html, por defecto el tamaño de la fuente en html es 16px, a menos que se cambie.
 */
