@@ -85,6 +85,7 @@ Las propiedades aplican a los elementos que no tengan definidas dichas propiedad
 .color3 {
     color: rgb(255, 0, 0)
         /*Convencion rgb para mostrar colores, funciona igual que el hezadecimal, con la diferencia que los valores a indicar van del 0 al 255*/
+        /*Convencion rgba para mostrar colores, funciona igual que el rgb pero incluye un cuarto parametro que indica la opacidad, toma valores del 0 al 1, donde 1 es un valor completamente solido y 0 un valor completamtne trasparente*/
 }
 
 /* la propiedad border muestra bordes en los elementos html, requiere el tamaño del borde, el color y el estilo del mismo*/
@@ -122,3 +123,56 @@ cm(centimetro), mm(milimetro), in(pulgada), pt(puntos, un setenta y doceabo de p
 em: tamaño de la fuente del contenido de la etiqueta, medida relativa al tamaño del contenido.
 rem: tamaño de la fuente de nuestra etiqueta raiz, osea la etiqueta html, por defecto el tamaño de la fuente en html es 16px, a menos que se cambie.
 */
+
+#fondo1 {
+    /*Color de fondo*/
+    background-color: rebeccapurple;
+    /*Opacidad del elemento completo, 1 color solido, 0 color trasparente*/
+    opacity: 0.5;
+}
+
+#fondo2 {
+    /*Alto del contenedor*/
+    height: 400px;
+    /*Recibe una url con la ruta donde esta almacenada la imagen a mostrar*/
+    background-image: url('img/coffee.png');
+    /*Ajusta el tamaño de la imagen*/
+    background-size: cover;
+    /*
+    cover: adapta el tamaño de la imagen al tamaño del contenedor, sin cambiar la relacion de aspecto pero si la porcion de la imagen mostrada segun la diferencia de tamaños entre la imagen y el contenedor
+    auto: incrusta la imagen con su tamaño original dentro del contenedor y se muestra la porcion de la imagen que coincide con el tamaño del contenedor, la imagen se repite si el contenedor es mas grande
+    contain: ajusta el tamaño de la imagen al del contenedor sin cambiar la relacion de aspecto, si el contenedor es mas grande al nuevo tamaño de la imagen ajustado, entonces la imagen se empieza a repetir
+    */
+}
+
+#fondo3 {
+    height: 1200px;
+    background-color: rebeccapurple;
+    background-image: url('img/coffee.png');
+    /*
+    Ajusta el tamaño de la imagen, indicandole el ancho y luego el alto
+    Al indicar las medidas de la imagen si se cambia la relacion de aspecto y se incrusta la imagen en el contenedor, si el tamaño del contenedor es mayor al nuevo tamaño ajustado de la imagen, esta se repite
+    El tamaño de la imagen se debe declarar despues de definir la imagen con la propiedad background-image, si no la propiedad se anula, puesto que cuando es interpretada, no hay imagen para redimencionar
+    */
+    background-size: 400px 400px;
+    /*
+    Gestiona la repeticion de la imagen dentro del contenedor y puede tomar varios valores   
+    repeat-x: solo se repite a lo largo de x
+    repeat-y: solo se repite a lo largo de y
+    no-repeat: no se repite la imagen
+    mas valores por estudiar, comprender e interiorizar
+    */
+    background-repeat: repeat-y;
+    /*
+    Gestiona la poscicion en la cual se empieza a repetir la imagen
+    Recibe la poscicion en x de donde empieza y la poscicion en y, con los valores right, left y center para las poscicion y y top bottom y center para la poscicion x
+    tambien se le pueden enviar la poscicion con las demas unidades de medida vistas, px, mm, rem, etc
+    */
+    background-position: left top;
+    /*
+    Podemos simplificar todas estas propiedades, con la siguiente sentencia, refenrente a la propiedad background
+    background: rebeccapurple url('img/coffee.png') repeat-y left top; y añadiendo el background-size posterior a la propiedad background
+    o inclusibe podemos simplificar a un mas la propiedad y añadir el tamaño dentro de la misma propiedad background de la siguiente manera
+    background: rebeccapurple url('img/coffee.png') repeat-y left top / 400px 400px;
+    */
+}
