@@ -176,3 +176,61 @@ rem: tamaño de la fuente de nuestra etiqueta raiz, osea la etiqueta html, por d
     background: rebeccapurple url('img/coffee.png') repeat-y left top / 400px 400px;
     */
 }
+
+/*
+La celda de una etiqueta se estructura en un margin que envuelve un borde y este envuelve un padding y este envuelve el contenido
+Esta estructura asi como las propiedades que modifican el estilo de la etiqueta se pueden ver en el inspeccionador de elementos del navegador
+*/
+.margen1 {
+    background: wheat;
+}
+
+.margen2 {
+    background: beige;
+
+    /*
+    Da margenes a un lado espesifico del contenedor
+    margin-top: ;
+    margin-bottom: ;
+    margin-left: ;
+    margin-right: ;
+    La etiqueta margin da margenes a todos los lados de nuestro contenedor en el orden de: top, right, bottom, left
+    Si se le envia un solo valor a la propiedad margin, todos los lados toman ese valor
+    Si se le mandan dos valores el primero es el valor vertical y el segundo el horizontal
+    Si se le mandan tres valores el primero es el valor superior, el segundo el horizontal y el tercero el inferior
+    */
+    margin: 15px 20px 25px 30px;
+
+    border: 1px black solid;
+
+    /*
+    da padding a un lado espesifico del contenedor
+    padding-top: ;
+    padding-bottom: ;
+    padding-right: 
+    padding-right: ;
+    La etiqueta padding da padding a todos los lados de nuestro contenedor en el orden de: top, right, bottom, left
+    Si se le manda 1, 2 o 3 valores tiene el mismo comportamiento que el margin
+    */
+    padding: 30px 25px 20px 15px;
+}
+
+.contenedor {
+    height: 100px;
+    width: 100px;
+
+    border: 1px black solid;
+
+    /*Borde que esta entre el borde real y el margen y toma las mismas caracteristicas y propiedades de un borde*/
+    outline: 1px orange solid;
+
+    background: thistle;
+
+    /*
+    La etiqueta overflow gestiona como se muestra el contenido de la etiqueta
+    Por defecto su valor es visible, muestra el contenido de la etiqueta asi este se salga del contenedor
+    El valor hidden oculta el contenido por fuera del tamaño del contenedor
+    El valor scroll, crea dos barras, una lateral y otra horizontal para dezplazarse por el contenido dentro de la etiqueta, estas barras se ubican entre el padding y el borde
+    */
+    overflow: scroll;
+}
