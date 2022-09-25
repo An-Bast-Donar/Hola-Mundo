@@ -311,3 +311,44 @@ ul {
     */
 
 }
+
+table {
+    width: 100%;
+    /*
+    Gestiona la separacion entre celdas
+    */
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: solid 1px lightgray;
+    padding: 5px;
+}
+
+th {
+    background-color: lightcoral;
+    color: white;
+}
+
+/*
+Nos permite seleccionar eleventos particulares
+odd: par
+even: par
+Este selector debe ir antes del selector hover
+*/
+tr:nth-child(odd) {
+    background-color: lightgray;
+}
+
+/*
+El selector de hover tambien se puede usar para mas etiquetas, como por ejemplo tr
+*/
+tr:hover {
+    background-color: gray;
+    color: white;
+    /*
+    Gestionar el iciono del cursor
+    */
+    cursor: pointer;
+}
