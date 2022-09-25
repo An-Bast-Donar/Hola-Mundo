@@ -392,7 +392,7 @@ span {
     absolute: relativo al elemento padre mas cercano
     sticky: mantiene el elemento en su posicion mientras se ve en pantalla, si el elemento sale de pantalla toma el valor relativo indicado
     */
-    position: sticky;
+    position: static;
     /*
     relative: posicion relativa segun otras medidas indicadas
     Distancia a la que se debe mover desde la izquiera, tambien existe top, rigth, right, bottom
@@ -423,9 +423,12 @@ span {
 Para poder centrar un elemento siempre se le debe indicar un ancho, un margen
 */
 .center {
+    /*Centrar contenido horizontal*/
     width: 200px;
     margin: 0 auto;
+    /*Centrar contenido vertical*/
     padding: 50px;
+    /*Centrar texto*/
     text-align: center;
     background-color: antiquewhite;
 }
