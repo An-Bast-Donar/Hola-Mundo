@@ -235,7 +235,7 @@ Esta estructura asi como las propiedades que modifican el estilo de la etiqueta 
     overflow: scroll;
 }
 
-.texto1 {
+.texto {
     width: 500px;
     border: 1px black solid;
     color: black;
@@ -351,4 +351,81 @@ tr:hover {
     Gestionar el iciono del cursor
     */
     cursor: pointer;
+}
+
+.inline {
+    /*
+    Gestiona como se visualiza la etiqueta
+    inline. en la misma linea, no se le puede asignar altura
+    ilnide-block. en la misma linea, se le puede asignar altura
+    */
+    display: inline;
+    border: greenyellow solid 1px;
+}
+
+span {
+    /*
+    display: block; es el que viene por defecto en la mayorita de etiqeutas de html
+    propiedad none: desaparece/oculta elementos
+    */
+    display: block;
+    /*
+    Indica el ancho maximo del elemento, pero puede tomar valores menores por diferetes razones
+    */
+    max-width: 300px;
+    background-color: #F00;
+    border: black solid 1px;
+}
+
+.visibilidad {
+    /*
+    Gestiona la visualizacion de los elementos
+    */
+    visibility: hidden;
+}
+
+#position {
+    color: black;
+    /*
+    static: viene por defecto en todas las etiquetas de html
+    fixed: posicion fija sobre lo que visualizamos en el navegador, con lo que anteriormente se hacian los menus estaticos de pantalla
+    absolute: relativo al elemento padre mas cercano
+    sticky: mantiene el elemento en su posicion mientras se ve en pantalla, si el elemento sale de pantalla toma el valor relativo indicado
+    */
+    position: sticky;
+    /*
+    relative: posicion relativa segun otras medidas indicadas
+    Distancia a la que se debe mover desde la izquiera, tambien existe top, rigth, right, bottom
+    left: 20px;
+    */
+}
+
+.contenedorizqder {
+    border: black solid 2px;
+    overflow: hidden;
+}
+
+.izquierda {
+    /*
+    Toma el elemento y lo ubica en la posicion indicada dentro de su padre
+    */
+    float: left;
+    border: red solid 2px;
+    width: 200px;
+    height: 200px;
+}
+
+.derecha {
+    border: blue solid 2px;
+}
+
+/*
+Para poder centrar un elemento siempre se le debe indicar un ancho, un margen
+*/
+.center {
+    width: 200px;
+    margin: 0 auto;
+    padding: 50px;
+    text-align: center;
+    background-color: antiquewhite;
 }
