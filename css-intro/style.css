@@ -234,3 +234,65 @@ Esta estructura asi como las propiedades que modifican el estilo de la etiqueta 
     */
     overflow: scroll;
 }
+
+.texto1 {
+    height: 100px;
+    width: 500px;
+    border: 1px black solid;
+    color: black;
+
+    /*
+    Fuente del texto
+    Intenta cargar una fuente, si no puede, carga la siguiente y asi hasta la fuente final, que si tampoco puede cargarla carga la de por defecto del html
+    Si el nombre de la fuente contiene espacios se escribe entre comillas simples
+    font-family: 'Courier New', Courier, monospace;
+    Si quiero usar una fuente descargada de internet, puedo por ejemplo obtener una fuente gratuita de google font, copiar los links que me proporsiona esa fuente he incluirlos en mi html > head, como esta echo actualmente en el proyecto
+    */
+    font-family: 'Bungee Spice', 'Courier New', Courier, monospace;
+
+    /*
+    Centra el texto de la etiqueta, valor por defecto: left
+    Otros valores que puede tomar: center, right, justify
+    */
+    text-align: justify;
+
+    /*
+    none (por defecto)
+    underline
+    line-through
+    overlines
+    */
+    text-decoration: line-through;
+
+    /*
+    Crea una sombra de el texto
+    Dos valores: valor hacia la derecha, valor hacia abajo
+    Tres valores: valor hacia la derecha, valor hacia abajo, color
+    Cuarto valores: valor hacia la derecha, valor hacia abajo, difuminado, color
+    */
+    text-shadow: 3px 5px 5px blue;
+}
+
+/*
+Los links en HTML pueden tener 4 diferentes estados
+Cuando nunca han sido visitados (selector a:link)
+Cuando han sido visitados (selector a:visited)
+Cuando se pasa el mouse por encima de el (selector a:hover)
+Cuando se encuentra activo, osea al momento de clickearlo (a:active)
+Se pueden utilizar unos o algunos de estos selectores, pero deben agregarse en este orden, link, visited, hover, active
+*/
+a:link {
+    color: blueviolet;
+}
+
+a:visited {
+    color: gray;
+}
+
+a:hover {
+    color: yellowgreen;
+}
+
+a:active {
+    color: brown;
+}
