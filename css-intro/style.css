@@ -236,7 +236,6 @@ Esta estructura asi como las propiedades que modifican el estilo de la etiqueta 
 }
 
 .texto1 {
-    height: 100px;
     width: 500px;
     border: 1px black solid;
     color: black;
@@ -295,4 +294,20 @@ a:hover {
 
 a:active {
     color: brown;
+}
+
+ul {
+    overflow: hidden;
+    text-align: justify;
+    width: 500px;
+    background-color: aqua;
+    /*
+    Modifica la viñeda de cada item de la lista
+    list-style-type: none;
+    Los items tienen un valor por defecto de 40 de padding a la izquiera, el cual puede modificarse
+    padding-left: 0;
+    Si quiero que las viñeras esten dentro del contenido de la etiqueta y no en el padding puedo cambiar la posicion de las mismas
+    list-style-position: inside;
+    */
+
 }
