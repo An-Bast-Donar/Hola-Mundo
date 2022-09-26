@@ -41,7 +41,7 @@ section article {
 
 section article:hover {
     /*
-    desplazamiento a la derecha, desplazamiento hacia abajo, difuminacion, color
+    Desplazamiento a la derecha, desplazamiento hacia abajo, difuminacion, color
     */
     box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.3);
 }

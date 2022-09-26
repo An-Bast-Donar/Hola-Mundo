@@ -431,3 +431,105 @@ Para poder centrar un elemento siempre se le debe indicar un ancho, un margen
     text-align: center;
     background-color: antiquewhite;
 }
+
+/*
+Flexbox es una tecnica de maquetacion con css que permite crear layouts y organizar los elementos de mejor manera dentro de una pagina
+*/
+.flexcontainer {
+    border: 1px solid #000;
+    background-color: thistle;
+    /*
+    flex: otro tipo de organizacion para el display
+    Si el contenido no tiene una altura por defecto, ocupan el 100% de la etiqeuta padre
+    */
+    display: flex;
+    height: 360px;
+    /*
+    Determina como se acomodan los elementos dentro de este contenedor, algunos de sus valores pueden ser column, row, column-reverse, row-reverse
+    flex-direction: row;
+    */
+    /*
+    Gestiona la cantidad de elementos por linea
+    El valor nowrap (valor por defecto) acomoda tantos como se puedan en una misma linea
+    El valor wrap los distribuye en varias lineas repetando el tamaño de cada subcontenedor
+    Tambien puede tomar el valor wrap-reverse, para que los elementos se pinten desde el ultimo hasta el primero
+    flex-wrap: wrap;
+    */
+    /*
+    Propiedad que me permite remplazar las propiedades flex-direction y flex-wrap
+    El primer valor es para flex-direction y el segundo valor es para flex-wrap
+    */
+    flex-flow: row wrap;
+    /*
+    Ordena los elementos dentro del contenedor
+    space-between: se crean espacios entre los elemntos hijos para que ocupen el 100% del tamaño del padre
+    space-around: cada elemento hijo se rodea de un espacio igual al resto para ocupar el 100% del tamaño del padre
+    space-evenly: los elementos hijos se separan entre ellos mismos y los borden del contenedor padre con el mismo valor de espaciado
+    center: centra los elementos hijos
+    flex-start: empiezan los elementos al inicio del contenedos
+    flex-end: empizan los elementos al final del contenedor
+    */
+    justify-content: space-between;
+    /*
+    El espacio entre contenido
+    Tiene los mismos valores que justify-content
+    */
+    align-content: flex-start;
+    /*
+    Ubica los items dentro del contenedor, tiene practicamente que los mismos valores de justify-content y align-content
+    En caso de no tener tamaño los subitems, con el valor flex-start se adaptan al menor tamaño posible para ellos y se ubican arriba del contenedor padre
+    flex-end: los ubica al final del contenedor y les adapta el tamaño al menor posible
+    center: los ubica en el centro del contenedor y de no tener tamaño les da el menor posible
+    stretch: los expande a lo alto o ancho del contenedor dependiendo las demas propiedades (es el valor por defecto)
+    Jugando con las propiedades justify-content, align-content y align-items se le puede dar un maquetado o estilo a mis items dentro de mi contenedor padre con flex
+    */
+    align-items: flex-start;
+}
+
+.caja {
+    border: 1px solid #000;
+    background-color: white;
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    width: 120px;
+    height: 120px;
+    /*
+    Sombreado a la etiqueta
+    Desplazamiento a la derecha, desplazamiento hacia abajo, difuminacion, color
+    */
+    box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.3);
+    /*Texto centrado horizontalmente*/
+    text-align: center;
+    margin: 5px;
+}
+
+.c1 {
+    background-color: lightblue;
+    /*
+    A los subelementos de un display:flex se le puede cambiar el orden en el que se visualizan en pantalla
+    */
+    order: 2;
+    /*
+    Prioridad de expancion del elemento
+    */
+    flex-grow: 1;
+    /*
+    El elemento se expande en funcion del tamaño total de su contenedor padre
+    Es un buen complemento para flex-grow y debe jugarse con el y el flex-basic de otros elementos hermanos para proporcional los tamaños ideales al diseño
+    flex-basis: 50%;
+    */
+}
+
+.c2 {
+    background-color: lightcoral;
+    order: 1;
+    flex-grow: 2;
+}
+
+.c3 {
+    background-color: lightgreen;
+    width: 80px;
+    height: 200px;
+    order: 3;
+}
