@@ -533,3 +533,158 @@ Flexbox es una tecnica de maquetacion con css que permite crear layouts y organi
     height: 200px;
     order: 3;
 }
+
+/*
+Grid sirve para maquetar una web (hacer el layout), no solo en una dimension, si tanto en horizontal como vertical y hacer una cuadricula que se adecue al sitio web que estabos construyendo
+Si quiero visualizar el grip desde el inspector en el navegador, debo seleccionar el elemento con grip, irme al apartado layout y seleccionar la opcion mostrar grip
+*/
+.grid-layout {
+    /*
+    Propiedad grid para crear el layout de mi pagina
+    */
+    display: grid;
+    /*
+    Cantidad de columnas de mi grid
+    Se le envian los valores del tamaño de cada columna, puede el vaor ser auto para que que auto adapte el tamaño al espacio disponible
+    */
+    grid-template-columns: 50% 20% auto;
+    /*
+    Cantidad y tamaño de las filas, toma los mismos valores que la etiqueta para el tamaño de las columnas
+    */
+    grid-template-rows: auto;
+    /*
+    Gestiona la posicion de las columnas, toma los mismos valores que si se usara el display:flex
+    */
+    justify-content: stretch;
+    border: 1px solid #000;
+    background-color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 80%;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.box {
+    border: 2px solid #000;
+    background-color: lightgray;
+    text-align: center;
+    height: 120px;
+}
+
+/*
+Caracteristicas individuales para elementos de css grid hijos del elemento que contenda display:grid (grid-layout)
+*/
+.b01 {
+    /*
+    Indica cuantas columnas va a ocupar este elemento dentro del grid
+    Se le indica de que linea a que linea del grid se extiende
+    En este caso este elemento se extienende desde la linea 1 hasta la 4
+    */
+    grid-column: 1/4;
+    background-color: lightblue;
+}
+
+.b02 {
+    /*
+    Palabra reservada span, para indicarle al item cuanto se expandira desde la primera linea
+    */
+    grid-column: 1/ span 2;
+    background-color: aquamarine;
+}
+
+.b04 {
+    height: auto;
+    /*
+    Indica cuantas filas se expande el item tambien se le puede añadir la palabra reservada spam
+    */
+    grid-row: 3/5;
+    background-color: lightsalmon;
+}
+
+.b07 {
+    height: auto;
+    width: auto;
+    /*
+    Tambien puedo expandir una area desde un punto #lineacolumna/#lineafila hasara un punto #lineacolumna/#lineafila
+    Con la propiedad grid-area
+    */
+}
+
+.b10 {
+    grid-column: 2/4;
+    background-color: limegreen;
+}
+
+.b11 {
+    grid-column: 1/4;
+    background-color: darkturquoise;
+}
+
+.distribucion-page {
+    display: grid;
+    /*
+    Crea un arreglo de columnas y filas donde se posicionaran los elemenos con esa etiqueta en su propiedad grid-area
+    Los elementos individuales hijos de la etiqueta con esta clase, deben contener en su css su etiqueta en grid-area para que esta distribucion funcione correctamente
+    */
+    grid-template-areas: 'cabecera cabecera'
+        'menu menu'
+        'contenido barralateral'
+        'footer footer';
+    /*
+    Otra distribucion de un grid-template-areas para dejar un espacio vacio entre el layout de la pagina
+    grid-template-areas:
+        "nav-header  nav-header  nav-header  nav-side"
+        "main-body   main-body   .           nav-side"
+        "footer      footer      footer      footer";
+    */
+
+    /*
+    Le modifico el tamaño a las filas ya creadas
+    */
+    grid-template-rows: 20% 10% auto 10%;
+    grid-template-columns: auto 15%;
+    height: 600px;
+    border: 1px solid #000;
+    background-color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+
+    /*
+    Separacion entre filas y columnas
+    row-gap: 10px;
+    column-gap: 10px;
+    */
+}
+
+.cont {
+    border: 1px solid #000;
+    background-color: lightgray;
+    text-align: center;
+}
+
+.cabecera {
+    /*
+    Etiqueto el item, para que posteriormente se dibuja en el grip-template-areas
+    */
+    grid-area: cabecera;
+    background-color: lightblue;
+}
+
+.menu {
+    grid-area: menu;
+    background-color: aquamarine;
+}
+
+.contenido {
+    grid-area: contenido;
+    background-color: lightsalmon;
+}
+
+.barralateral {
+    grid-area: barralateral;
+    background-color: limegreen;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: darkturquoise;
+}
