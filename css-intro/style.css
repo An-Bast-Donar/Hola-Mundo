@@ -10,6 +10,7 @@ NOTAS
 CSS funciona en base a selectores que referencian un unico o varios elementos dentro de nuestro HTML.
 Los que se escriba de ultimo en nuestro archivo css tiene proridad sobre lo que va antes.
 Una etiqueta en el HTML puede tener multiples clases de css.
+Dejar el mouse sobre una propiedad, hace que aparezca un link a MDN Reference que contiene informacion sobre la propiedad.
 */
 
 /*Aplica estilo a la etiqueta body*/
@@ -687,4 +688,105 @@ Caracteristicas individuales para elementos de css grid hijos del elemento que c
 .footer {
     grid-area: footer;
     background-color: darkturquoise;
+}
+
+/*
+Animaciones en CSS
+*/
+.rainbow-boi {
+    /*
+    La propiedad animation permite comprimir 6 propiedades en una sola
+    Para este ejemplo la propiedad animacion recibe el nombre de la animacion (rainbow) que sera ejecutada
+    La duracion de la animacion (4s)
+    La cantidad de repeticiones de la animacion (infinite)
+    La funcion de velocidad de la animacion (linear)
+    Otros valores que se pueden enviar son, un tiempo de retraso para iniciar la animacion (delay)
+    La direccion de repreduccion de la animacion, atras, adelante o alternada (direccion)
+    */
+    animation: rainbow 4s infinite linear;
+    font-size: 30px;
+}
+
+/*
+La notacion keyframe se usa para brindar una animacion al identificador de animacion seleccionado posteriormente, en este caso el nombre de animacion creado rainbow
+*/
+@keyframes rainbow {
+
+    /*
+    Si la animacion tiene la misma propiedad final he inicial, es util separar con comas las reglas de dicha etapa de la animacion
+    Cada porcentaje representa la etapa en a que se encuentra la animacion y los valores de propiedades que adquirira en ese momento
+    */
+    100%,
+    0% {
+        color: rgb(255, 0, 0);
+    }
+
+    25% {
+        color: rgb(127, 255, 0);
+    }
+
+    50% {
+        color: rgb(0, 255, 255);
+    }
+
+    75% {
+        color: rgb(127, 0, 255);
+    }
+
+    90% {
+        color: rgb(255, 0, 127);
+    }
+}
+
+.dancer {
+    /*
+    El ancho del div se ajusta al minimo posible segun el contenido que tenga
+    */
+    width: min-content;
+
+    /*
+    La forma corta de las propiedades de animacion serian con la propiedad animation
+    animation: move 1s infinite alternate ease;
+    */
+    animation-name: move;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    /*
+    Puede tomar multiples valores: linear, ease, ease-in-out, ease-in, ease-out
+    Estos valores son el resultado de la siguiente funcion con sus argumentos cubic-bezier(,,,)
+    */
+    animation-timing-function: ease;
+}
+
+@keyframes move {
+
+    /*
+    Declarando desde y hasta o solo hasta, en caso que solo necesitemos indicar el inicio y el final o solo el fin respectivamente
+    */
+    from {
+        translate: 0px;
+    }
+
+    to {
+        /*Puede tiomar diferentes valores, un solo valor significa una traslacion en el eje x*/
+        translate: 100px;
+    }
+}
+
+.spinny-boi {
+    animation: spin 0.5s infinite linear;
+    display: inline-block;
+    font-size: 30px;
+}
+
+@keyframes spin {
+    to {
+        /*
+        Permite rotar, escalar, sesgar o traducir un elemento
+        Tiene como valor una funcion con sus respectivos argumentos
+        Siempre se puede buscar informacion sobre una propiedad con la referencia mdn de la misma
+        */
+        transform: rotate(360deg);
+    }
 }
