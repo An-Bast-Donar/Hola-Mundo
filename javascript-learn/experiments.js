@@ -17,8 +17,12 @@
  */
 console.log("HOLA MUNDO");
 
+
+
+
+
 /**
- * Tipos de valores
+ * ==================== Tipos de valores ====================
  * La funcion typeof() me muestra el tipo de variable que le envio por parametro
  */
 console.log("\nTIPOS DE VARIABLES");
@@ -31,8 +35,12 @@ console.log(typeof(undefined));
 console.log(typeof([1, 2, 3]));
 console.log(typeof ({ clase: "JavaScript" }));
 
+
+
+
+
 /**
- * Variables, guardar valores en memoria
+ * ==================== Variables, guardar valores en memoria ====================
  * Las variables se declara y se inicializan
  * Se declaran con la variable var y se inicializan igualandolas a un valor, esto se puede hacer en diferentes lineas o en la misma
  * Ej: var variable; (declarada)
@@ -62,8 +70,12 @@ console.log(maps); // Los elementos internos se llaman por su palabra clave, Ej:
  */
 
 
+
+
+
 /**
- * Las funciones son conjuntos de sentencias que podemos usar para generar cierto comportamiento.
+ * ==================== Las funciones ====================
+ * Son conjuntos de sentencias que podemos usar para generar cierto comportamiento.
  * Tenemos dos tipo de funciones en js, function Declaration y function Expression o Anonimas.
  */
 console.log("\nFUNCIONES");
@@ -84,21 +96,41 @@ function saludarEstudiante(estudiante) {
 }
 saludarEstudiante("Juan");
 
+
+
+
+
 /**
- * El Scope es el alcance que tienen las variables, depende de donde las declaremos y las mandamos llamar si tendremos acceso a ellas o no.
+ * ==================== El Scope ====================
+ * Es el alcance que tienen las variables, depende de donde las declaremos y las mandamos llamar si tendremos acceso a ellas o no.
  * Tenemos dos tipos de Scope, Scope Global y Scope Local.
  * Para diferenciar una variable local de una global, se cambia la palabra reservada var por let
  */
 
-/**
- * Hoisting es cuando las declaraciones de variables y funciones se procesan antes de ejecutar cualquier código, apesar de haber sido escritas en desorden.
- */
+
+
+
 
 /**
- * La palabra reservada const es para declarar constantes en el codigo, se cambia por la palabra reservada var
+ * ==================== Hoisting ====================
+ * Es cuando las declaraciones de variables y funciones se procesan antes de ejecutar cualquier código, apesar de haber sido escritas en desorden.
  */
 
+
+
+
+
 /**
+ * ==================== La palabra reservada const ====================
+ * Es para declarar constantes en el codigo, se cambia por la palabra reservada var
+ */
+
+
+
+
+
+/**
+ * ==================== Sentencia IF ====================
  * If(true){} else if(true){} else{}
  * Operadores:
  * == Compara el valor
@@ -117,16 +149,25 @@ saludarEstudiante("Juan");
  * Si entra a un if el programa no valida el elseif o el esle posterior
  */
 
+
+
+
+
 /**
- * Operador ternario
+ * ==================== Operador ternario ====================
  * Condicion ? si si : si no;
  */
 console.log("\nOPERADOR TERNARIO");
 var resultado = true ? true : false;
 console.log(resultado);
 
+
+
+
+
 /**
- * Switch compara con un === por esa razón los elementos tiene que ser idénticos
+ * ==================== Switch ====================
+ * Compara con un === por esa razón los elementos tiene que ser idénticos
  * */
 console.log("\nSWITCH");
 var number = 1; 
@@ -146,8 +187,13 @@ switch (number) {
 }
 console.log(result);
 
+
+
+
+
 /**
- * Los loops (bucles), son manera rápida y sencilla de hacer algo (una tarea) repetidamente.
+ * ==================== Los loops (bucles) ====================
+ * Son manera rápida y sencilla de hacer algo (una tarea) repetidamente.
  */
 var estudiantes = ['Maria', 'Sergio', 'Rosa', 'Daniel'];
 function greetStudent(estudiante) {
@@ -167,8 +213,13 @@ while (estudiantes.length > 0) {   // Aquí la tarea se hará siempre y cuando s
     greetStudent(estudiante);
 }
 
+
+
+
+
 /**
- * Un array es una estructura de datos, es un objeto tipo lista de alto nivel.
+ * ==================== Array ====================
+ * Es una estructura de datos, es un objeto tipo lista de alto nivel.
  * Los arrays son objetos de tipo lista cuyo prototipo tiene métodos para realizar operaciones de recorrido y mutación
  */
 var frutas = []; // Array Literal Syntax 
@@ -195,12 +246,28 @@ var borrarFruta = frutas.shift(); // Elimina el primer elemento, tambien recibe 
 var posicion = frutas.indexOf("Platano"); // Da la posición de ese item
 
 // Metodo Includes
-var incluyeFruta = frutas.includes("Pera"); 
+var incluyeFruta = frutas.includes("Pera");
+
+// Separa cada valor con el caracter en el parametro
+console.log(frutas.join(" | "));
+
+// Otra forma de arreglos con subindices diferentes a numeros
+var jugadores = new Array();
+jugadores["Cristiano Ronaldo"] = "Real Madrid";
+jugadores["Messi"] = "Barcelona";
+jugadores["Neymar"] = "PSG";
+jugadores["Griezman"] = "Atlético de Madrid";
+jugadores["Pogba"] = "Manchester United";
+console.log(jugadores); 
+
+
+
+
 
 /**
- * Un objeto es una colección de propiedades, y una propiedad es una asociación de key (nombre, o clave) y valores.
+ * ==================== Objeto ====================
+ * Es una colección de propiedades, y una propiedad es una asociación de key (nombre, o clave) y valores.
  */
-//
 console.log("\nOBJETOS");
 // Declarar e inicializar un objeto, el objeto tambien puede contener funciones en sus propiedades
 var objecto = {}; // Object Literal Syntax 
@@ -226,8 +293,27 @@ function auto(marca, modelo, annio) {  // Creas una función con los parametros 
 var newAuto = new auto("Tesla", "Model 3", 2020);
 console.log(newAuto, newAuto.detallesDelAuto());
 
+// Un objeto puede contener objetos
+var me = {
+    name: {
+        first: "Juan",
+        last: "Rondon",
+    },
+    location: {
+        neighborhood: "Provenza",
+        city: "Bucaramanga",
+        country: "Colombia",
+    },
+};
+console.log(me.name.first);
+console.log(me.location.city);
+
+
+
+
+
 /**
- * Arreglos de objetos
+ * ==================== Arreglos de objetos ====================
  */
 console.log("\nARREGLO DE OBJETOS");
 var articulos = [
@@ -239,6 +325,10 @@ var articulos = [
     { nombre: 'teclado', costo: 500 },
     { nombre: 'audifonos', costo: 1700 }
 ]
+console.log(articulos);
+
+// Modificar un valor
+articulos[2] = { nombre: 'Book', costo: 310 }
 console.log(articulos);
 
 // Metodo Filter  
@@ -263,10 +353,13 @@ var encuentraArticulos = articulos.find(function(articulo){
 console.log(encuentraArticulos);
 
 // Metodo forEach
-/* Recorre cada articulo */
 articulos.forEach(function(articulo){
     console.log(articulo.nombre);
 });
+// Metodo for comun para recorrer cada articulo
+for (let i = 0; i < articulos.length; i++) {
+  console.log(articulos[i]);
+}
 
 // Metodo Some
 /* Este método nos regresa un false o un true para validar si hay o no artículos que cumplan la validación */
@@ -288,3 +381,118 @@ var costoTotal = articulos.reduce(function(totalActual, articulo){
     return articulo.costo + totalActual;
 }, 0); // El 0 será la cantidad inicial con la que comenzará el totalActual
 console.log(costoTotal);
+
+
+
+
+
+/**
+ * ==================== Atajos para uno a cada variables ====================
+ */
+console.log("\nATAJOS DE AGREGACION");
+friendsAtYourParty = 0;
+console.log(friendsAtYourParty);
+friendsAtYourParty = friendsAtYourParty + 1;
+console.log(friendsAtYourParty);
+friendsAtYourParty += 1;
+console.log(friendsAtYourParty);
+friendsAtYourParty++;
+console.log(friendsAtYourParty);
+++friendsAtYourParty;
+console.log(friendsAtYourParty);
+
+
+
+
+
+/**
+ * ==================== Ejemplo de concadenacion de caracteres una cantidad de veces limitada ====================
+ */
+console.log("\nEJEMPLO CONCADENACION CARACTERES");
+const character = "🐩";
+var word = ""; // start with an empty string
+var timesToRepeat = 10;
+for (let i = 0; i < timesToRepeat; i++) {
+  word = word + character;
+}
+console.log(word);
+
+
+
+
+
+/**
+ * ==================== Funcion flecha ====================
+ * ([param] [, param]) => { instrucciones }
+ * param => expresión
+ * 
+ * Si no hay argumentos se tiene que indicar con (). Para un único argumento no son necesarios los parentesis.
+ * Multiples instrucciones deben ser encerradas entre llaves. Una única expresión no necesita llaves. La expresión en si misma es el valor de retorno.
+ */
+console.log("\nFUNCION FLECHA");
+function noFlechaSinArgumentos () {
+  console.log("Esto es una funcion comun sin argumentos");
+};
+noFlechaSinArgumentos();
+function noFlechaConArgumentos (arg01, arg02) {
+  console.log(`Esto es una funcion comun con argumentos: ${arg01} ${arg02}`);
+};
+noFlechaConArgumentos('arg01', 'arg02');
+
+funcionFlechaSinArgumentos01 = () => console.log("Esto es una funcion flecha sin argumentos y un unico valor de retorno");
+funcionFlechaSinArgumentos01();
+
+funcionFlechaSinArgumentos02 = () => 2 + 2;
+console.log(`Esto es una funcion flecha sin argumentos y un unico valor de retorno: ${funcionFlechaSinArgumentos02()}`);
+/**
+ * Posibles casos:
+ * Sin argumentos, una expresion: () => {exprecion} ó () => exprecion
+ * Sin argumentos, multiples expresiones (intrsucciones): () => {instrucciones}
+ * Con un argumento, unica expresion: (param) => {exprecion} ó param => {exprecion} ó (param) => exprecion ó param => exprecion
+ * Con un argumentos, instrucciones: (param) => {instrucciones} ó param => {instrucciones}
+ * Con argumentos, unica expresion: (param, param) => {exprecion} ó (param, param) => exprecion
+ * Con argumentos, insturcciones: (param, param) => {instrucciones}
+ */
+
+
+
+
+
+/**
+ * ==================== Algunas funciones para modificar variables ====================
+ */
+console.log("\nMODIFICACION DE VARIABLES");
+
+// Minuscula
+var sentence = "ThIs HaS wEiRd CaSiNg On It";
+var lowerCaseSentence = sentence.toLowerCase();
+console.log(sentence);
+console.log(lowerCaseSentence);
+
+// Redondear
+var number = 5.3;
+var roundedNumber = Math.round(number);
+console.log(number);
+console.log(roundedNumber);
+
+// Buscar una variable en un
+var testStringOne = "The quick brown fox jumps over the lazy dog";
+var testStringTwo = "Mirror, mirror on the wall, don't say it cause I know I'm cute";
+var stringToLookFor = "cute";
+console.log(testStringOne.includes(stringToLookFor));
+console.log(testStringTwo.includes(stringToLookFor));
+
+// want to know how many milliseconds have elapsed since Jan 1 1970?
+console.log(Date.now());
+
+
+
+
+
+
+/**
+ * ==================== La palabra reservada this ====================
+ * Hace referencia al contexto
+ */
+console.log("\nCONTEXTO");
+console.log(this);
