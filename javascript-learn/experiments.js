@@ -287,4 +287,4 @@ console.log(articulosBaratos);
 var costoTotal = articulos.reduce(function(totalActual, articulo){
     return articulo.costo + totalActual;
 }, 0); // El 0 será la cantidad inicial con la que comenzará el totalActual
-console.log(costoTotal); 
+console.log(costoTotal);
