@@ -489,7 +489,6 @@ console.log(Date.now());
 
 
 
-
 /**
  * ==================== La palabra reservada this ====================
  * Hace referencia al contexto
