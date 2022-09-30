@@ -221,6 +221,7 @@ while (estudiantes.length > 0) {   // Aquí la tarea se hará siempre y cuando s
  * ==================== Array ====================
  * Es una estructura de datos, es un objeto tipo lista de alto nivel.
  * Los arrays son objetos de tipo lista cuyo prototipo tiene métodos para realizar operaciones de recorrido y mutación
+ * Los Arrays tienen muchos metodos que nos ayudan a filtrar elementos y realizar mas acciones, se pueden buscar en el MDN
  */
 var frutas = []; // Array Literal Syntax 
 var frutas = ["Manzana", "Platano", "Cereza", "Fresa"];
@@ -525,6 +526,7 @@ console.log(this);
  * getAttribute(): Obtiene el valor del atributo que se le pase como parametro
  * setAttribute(,): Se le pasa como primer parametro el atributo a modificar y como segundo parametro el nuevo valor
  */
+console.log("\nDOM");
 
 // Insertar titulo
 var titulo = document.querySelector('.titulo');
@@ -561,6 +563,15 @@ var paragraph01 = document.querySelector(".p-to-copy-to");
 input01.addEventListener("keyup", function () {
   paragraph01.innerText = input01.value;
 });
+/**
+ * input01.addEventListener("keyup", btnKeyup);
+ * function btnKeyup () {
+ *  paragraph01.innerText = input01.value;
+ * }
+ * 
+ * Si no se le agrega parentecis a una funcion significa que se debe mandar a ejecutar, no que se ejecute
+ * Los formularios tambien tienen eventos como el SubmitEvent, que es cuando se envia el formulario
+ */
 
 // Cambiar color segun el que se escriba en el input
 var input02 = document.querySelector(".color-input");
@@ -570,11 +581,20 @@ input02.addEventListener("change", function () {
 });
 
 // Ejecutar alerta segun el boton que se oprima
-document
-  .querySelector(".button-container")
-  .addEventListener("click", function (event) {
-  alert(`You clicked on button ${event.target.innerText}`);
-  });
+document.querySelector(".button-container").addEventListener("click", function (event) {
+        console.log(event);
+        alert(`You clicked on button ${event.target.innerText}`);
+});
+/**
+ * Al hacer click sobre un elemento html o sobre alguna parte de la pagina, se activa un evento
+ * Ese evento es un objeto que contiene informacion sobre la accion ejecutada, cordenadas del click, etc.
+ * 
+ * document.querySelector(".button-container").addEventListener("click", btnConainer);
+ * function btnConainer(event) {
+ *  console.log(event);
+ *  alert(`You clicked on button ${event.target.innerText}`);
+ * }
+ */
 
 // Gestionar clases
 var caja = document.getElementById('caja-color');
@@ -583,10 +603,22 @@ caja.classList.remove('color-verde'); //Remueve una clase de mi elemento
 //caja.classList.toggle('color-verde'); //Dependiendo de si tiene la clase o no, se añade o se remueve
 //caja.classList.contains('color-verde'); //Devuelve true o false dependiendo si tiene la clase por la que preguntamos
 
-//Crear un elemento desde cero
+// Crear un elemento desde cero
 var img = document.createElement('img');
 var divimg = document.getElementById('crearimg');
 img.setAttribute('src', 'img/coffee.png')
 divimg.append(img);
 img.style.width = '300px';
 img.style.height = '300px';
+
+
+
+
+/**
+ * ==================== MATH ====================
+ * Math es una biblioteca muy completa  de constantes y funciones matematicas
+ * Puede consultarse atravez del MDN
+ */
+console.log("\nMATH");
+console.log(Math.E);
+console.log(Math.PI);
