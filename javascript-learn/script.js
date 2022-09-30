@@ -622,3 +622,13 @@ img.style.height = '300px';
 console.log("\nMATH");
 console.log(Math.E);
 console.log(Math.PI);
+
+
+
+
+
+/**
+ * ==================== DEBUGGER ====================
+ * La palabra reservada debugger pausa la ejecucion en el navegador y en el apartado de inspecionar consola se puede visualizar el estado de la app
+ * debugger;
+ */
