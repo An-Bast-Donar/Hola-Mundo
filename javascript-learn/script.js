@@ -504,4 +504,89 @@ console.log(this);
  * ==================== DOM ====================
  * Significan Document Object Model, o lo que es lo mismo, la estructura del documento HTML.
  * Una página HTML está formada por múltiples etiquetas HTML, anidadas una dentro de otra, formando un árbol de etiquetas relacionadas entre sí, que se denomina árbol DOM.
+ * 
+ * document.getElementById(id): Regresa el elemento con ese id, no hace falta escribir el # del id en el argumento de la funcion
+ * document.getElementsByClassName(nombreDeClase): Regresa una lista con los elementos con esa clase, no hace falta escribir el . de la clase en el argumento de la funcion
+ * document.getElementsByTagName(nombreDeEtiqueta): Regresa una lista con los elementos que respondan a la etiqueta enviada como argumento a la funcion
+ * document.querySelector(selectorCss): Regresa el primer elemento encontrado con el selector css, si se envia un id o una clase debe ponerse el # o el . tal cual como en css
+ * document.querySelectorAll(selectorCss): Regresa una lista con todos los elementos encontrados, el argumento recibe el mismo valor que en document.querySelector(selectorCss)
+ * 
+ * Cada elemento tiene propiedades que apuntan a los elementos relacionados con él:
+ * firstElementChild
+ * lastElementChild
+ * nextElementChild/nextElementSibling
+ * previousElementChild/previousElementSibling
+ * childNodes
+ * childElementCount
+ * 
+ * innerHTML: inserta html en la etiqueta que ejecute la funcion
+ * innerText: inserta solo texto en la etiqueta que ejecute la funcion
+ * 
+ * getAttribute(): Obtiene el valor del atributo que se le pase como parametro
+ * setAttribute(,): Se le pasa como primer parametro el atributo a modificar y como segundo parametro el nuevo valor
  */
+
+// Insertar titulo
+var titulo = document.querySelector('.titulo');
+titulo.innerText = 'TITULO';
+
+// Insertar texto
+var label = document.querySelector('.label');
+label.innerText = 'Ingresa valor: ';
+
+// Insertar placeholder
+var input = document.querySelector('#input');
+input.setAttribute('placeholder', 'Escribe aca');
+
+// Cambiar color del estilo
+var redSquare = document.querySelector(".red-square");
+redSquare.style.backgroundColor = "limegreen";
+
+// Cambiar texto de los items de los elementos
+var elementsToChange = document.querySelectorAll(".js-target");
+for (let i = 0; i < elementsToChange.length; i++) {
+  let currentElement = elementsToChange[i];
+  currentElement.innerText = "Modified by JavaScript!";
+}
+
+// Ejecutar alerta al oprimir el boton
+var button = document.querySelector(".event-button");
+button.addEventListener("click", function () {
+  alert("Hey there!");
+});
+
+// Cambiar texto segun lo que se escriba en el input
+var input01 = document.querySelector(".input-to-copy");
+var paragraph01 = document.querySelector(".p-to-copy-to");
+input01.addEventListener("keyup", function () {
+  paragraph01.innerText = input01.value;
+});
+
+// Cambiar color segun el que se escriba en el input
+var input02 = document.querySelector(".color-input");
+var paragraph02 = document.querySelector(".color-box");
+input02.addEventListener("change", function () {
+  paragraph02.style.backgroundColor = input02.value;
+});
+
+// Ejecutar alerta segun el boton que se oprima
+document
+  .querySelector(".button-container")
+  .addEventListener("click", function (event) {
+  alert(`You clicked on button ${event.target.innerText}`);
+  });
+
+// Gestionar clases
+var caja = document.getElementById('caja-color');
+caja.classList.add('color-verde'); //Añade una clase a mi elemento
+caja.classList.remove('color-verde'); //Remueve una clase de mi elemento
+//caja.classList.toggle('color-verde'); //Dependiendo de si tiene la clase o no, se añade o se remueve
+//caja.classList.contains('color-verde'); //Devuelve true o false dependiendo si tiene la clase por la que preguntamos
+
+//Crear un elemento desde cero
+var img = document.createElement('img');
+var divimg = document.getElementById('crearimg');
+img.setAttribute('src', 'img/coffee.png')
+divimg.append(img);
+img.style.width = '300px';
+img.style.height = '300px';

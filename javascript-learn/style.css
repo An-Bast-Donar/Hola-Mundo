@@ -1,0 +1,27 @@
+.red-square {
+    background-color: crimson;
+    width: 100px;
+    height: 100px;
+}
+
+.p-to-copy-to {
+    display: inline;
+}
+
+.color-box {
+    background-color: purple;
+    width: 100px;
+    height: 100px;
+}
+
+.color-red {
+    background-color: red;
+    width: 100px;
+    height: 100px;
+}
+
+.color-verde {
+    background-color: green;
+    width: 100px;
+    height: 100px;
+}

@@ -5,15 +5,64 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
-
-    <!-- Vincular archivo javascript -->
-    <script src="script.js"></script>
-
 </head>
 
 <body>
+    <h1 class="titulo"></h1>
+    <label for="input" class="label"></label>
+    <input type="text" id="input">
 
+    <br /><br />
+
+    <div class="red-square"></div>
+
+    <ul>
+        <li class="js-target">Unchanged</li>
+        <li class="js-target">Unchanged</li>
+        <li>Won't Change</li>
+        <li class="js-target">Unchanged</li>
+        <li>Won't Change</li>
+        <li class="js-target">Unchanged</li>
+    </ul>
+
+    <button class="event-button">Click me!</button>
+
+    <br /><br />
+
+    <input placeholder="type into me!" class="input-to-copy" />
+    <p class="p-to-copy-to">Nothing has happened yet.</p>
+
+    <br /><br />
+
+    <div>
+        <div class="color-box"></div>
+        <input class="color-input" placeholder="Type a color here!" />
+    </div>
+
+    <br />
+
+    <div class="button-container">
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>5</button>
+    </div>
+
+    <br />
+
+    <div class="color-red" id="caja-color"></div>
+
+    <br />
+
+    <div id="crearimg"></div>
+
+    <!-- Vincular archivo javascript
+    El archivo javascript tambien puede ser llamado desde el head, pero para poder hacer referencia a las etiquetas HTML debe ser llamado al final del body
+    Tambien puede ser llamado en el head y añadirle un evento que escuche cuando el html se cargue completamente -->
+    <script src="script.js"></script>
 </body>
 
 </html>
