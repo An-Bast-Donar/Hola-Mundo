@@ -632,3 +632,46 @@ console.log(Math.PI);
  * La palabra reservada debugger pausa la ejecucion en el navegador y en el apartado de inspecionar consola se puede visualizar el estado de la app
  * debugger;
  */
+
+
+
+
+
+/**
+ * ==================== LOCAL STORAGE ====================
+ * Se pueden grabar solo string
+ * Existen metoos para grabar objetos
+ * Se puede visualizar desde el apartado de aplicacion -> localstore en inspeccionar
+ * Si se intemta jalar un item del local storage que no existe, regresara null
+ */
+console.log("\nLOCAL STORAGE");
+function guardar_localstorage() {
+    let miname = "Juan";
+    let persona = {
+        nombre: "Fernando",
+        edad: 31,
+        correo: "xyz.xyz.com",
+        coords: {
+            lat: 10,
+            lng: -10
+        }
+    };
+    localStorage.setItem("nombre", miname);
+    localStorage.setItem("persona", JSON.stringify(persona));
+}
+function obtener_localstorage() {
+    let miname = localStorage.getItem("nombre");
+    let persona = JSON.parse(localStorage.getItem("persona"));
+    console.log(miname, persona,  localStorage.getItem("nombre") ? true : false)
+}
+guardar_localstorage();
+obtener_localstorage();
+
+
+
+
+
+/**
+ * ==================== ECMASCRIPT ====================
+ * 
+ */ 
