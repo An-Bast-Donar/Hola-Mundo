@@ -103,8 +103,10 @@ saludarEstudiante("Juan");
 /**
  * ==================== El Scope ====================
  * Es el alcance que tienen las variables, depende de donde las declaremos y las mandamos llamar si tendremos acceso a ellas o no.
- * Tenemos dos tipos de Scope, Scope Global y Scope Local.
- * Para diferenciar una variable local de una global, se cambia la palabra reservada var por let
+ * Tenemos Scope Global, Scope Funtion y Scope Block.
+ * La palabra reservada var es para es para Scope Funtion, let para Block y si se declara una variable sin esas palabras es Global
+ * Usar 'use strict'; me permite no usar variables no declaradas
+ * El CLOUSE hace referencia a llamar en una funcion una variable externa a esa
  */
 
 
@@ -673,5 +675,101 @@ obtener_localstorage();
 
 /**
  * ==================== ECMASCRIPT ====================
- * 
- */ 
+ * Estandar, serie de reglas que basan a javascript, como los navegadores y diferentes servidores interpretan javascript o otro lenguaje
+ * TC39: grupo que se encarga de darle actualizaciones a ECMASCRIPT
+ */
+
+//La multininea tambien es sencible a tabulaciones y para llevarla a cabo con las comillas simples se necesita el \n
+console.log("\nMULTILINEA"); // ==================== MULTILINEA ====================
+var multilinea = `esto es un texto 
+con multilinea`;
+console.log(multilinea);
+
+//Asignar valores por defecto
+console.log("\nASIGNAR VALORES POR DEFECTO"); // ==================== ASIGNAR VALORES POR DEFECTO ====================
+function newusuario(name, age, country){
+    nameuser = name || 'Oscar';
+    ageuser = age || 34;
+    countryuser = country || 'MX';
+}
+function nuevousuario(name = 'Juan', age = 26, country = 'CO'){
+    nameusuario = name;
+    ageusuario = age;
+    countryusuario = country;
+}
+newusuario('Pedro');
+nuevousuario('Pedro');
+console.log(nameuser, ageuser, countryuser);
+console.log(nameusuario, ageusuario, countryusuario);
+
+//Desestructuracion
+console.log("\DESESTRUCTURACION"); // ==================== DESESTRUCTURACION ====================
+let introduccion04 = ["Hola", "Yo" , "soy", "Sarah"];
+let saludo04 = introduccion04[0];
+let nombre04 = introduccion04[3];
+console.log(saludo04); // "Hola"
+console.log(nombre04); // "Sarah"
+
+let [saludo05, pronombre05] = introduccion04;
+console.log(saludo05); // "Hola"
+console.log(pronombre05); // "Yo"
+
+let [saludo06,,,nombre06] = introduccion04;
+console.log(saludo06); // "Hola"
+console.log(nombre06); // "Sarah"
+
+let [saludo07, ...introduccion07] = introduccion04;
+console.log(saludo07); // "Hola"
+console.log(introduccion07); // ["Yo", "soy", "Sarah"]
+
+let [saludo08 = "Hey", nombre08 = "Sarah"] = ["Hola"];
+console.log(nombre08); // "Sarah"
+
+let a = 3;
+let b = 6;
+[a, b] = [b, a];
+console.log(a); // 6
+console.log(b); // 3
+
+// No crea variables nuevas, modifica las que ya hay
+let persona14 = {
+    nombre14: "Sarah", 
+    pais14: "Nigeria", 
+    trabajo14: "Desarrollador"
+};
+let nombre14 = persona14.nombre14;
+let pais14 = persona14.pais14;
+let trabajo14 = persona14.trabajo14;
+console.log(nombre14); // "Sarah"
+console.log(pais14); // "Nigeria"
+console.log(trabajo14); // "Desarrollador"
+
+let persona15 = {
+    nombre15: "Sarah", 
+    pais15: "Nigeria", 
+    trabajo15: "Desarrollador"
+};
+let {nombre15, pais15, trabajo15} = persona15;
+console.log(nombre15); // "Sarah"
+console.log(pais15); // "Nigeria"
+console.log(trabajo15); // "Desarrollador"
+
+let {nombre15: nombre16, pais15: pais16, trabajo15:trabajo16} = persona15;
+console.log(nombre16); // "Sarah"
+console.log(pais16); // "Nigeria"
+console.log(trabajo16); // "Desarrollador"
+
+let {nombre15:nombre17 = "Emma", amiga17 = "Annie"} = persona15;
+console.log(nombre17); // "Sarah"
+console.log(amiga17); // "Annie"
+
+//Objetos literales
+console.log("\nOBJETOS LITERALES"); // ==================== OBJETOS LITERALES ====================
+function superusuario(namesuper = 'Juan', agesuper = 19, countrysuper = 'CH'){
+    return {
+        namesuper,
+        agesuper,
+        countrysuper
+    }  
+}
+console.log(superusuario('Pedro'));
