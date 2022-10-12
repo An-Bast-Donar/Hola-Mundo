@@ -700,8 +700,8 @@ console.log(superusuario("Pedro"));
  * Es una forma de trabajar el asincronismo
  * Algo que va a pasar, hoy mañana o nunca
  */
-console.log("\nPROMESAS"); // ==================== Promesas ====================
-something = false;
+// ==================== Promesas ====================
+something = true;
 const promesa = () => {
   return new Promise((resolve, reject) => {
     if (something) {
@@ -713,8 +713,31 @@ const promesa = () => {
   });
 };
 promesa()
-  .then((respuesta) => console.log(respuesta)) //En caso que se ejecute resolve
-  .catch((error) => console.log(error)); //En caso que se ejecute reject
+  .then((respuesta) => console.log("\nPROMESAS:", respuesta)) //En caso que se ejecute resolve
+  .catch((error) => console.log("\nPROMESAS:", error)); //En caso que se ejecute reject
+
+//Clases
+/**
+ * Hereda funciones y atributos
+ */
+console.log("\nCLASES"); // ==================== Clases ====================
+class Calculator {
+  // Constructor
+  constructor() {
+    // Atributos
+    this.valueA = 0;
+    this.valueB = 0;
+  }
+  // Método
+  suma(num1, num2) {
+    this.valueA = num1;
+    this.valueB = num2;
+    return this.valueA + this.valueB;
+  }
+}
+// Instancia
+const calculadora = new Calculator();
+console.log(calculadora.suma(2, 2));
 
 /**
  * ==================== EJEMPLOS ====================
