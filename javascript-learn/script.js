@@ -1007,3 +1007,17 @@ mensaje.replaceAll(/a/g, "*");
  * De izquierda a derecha los indices aumentan de 1 en 1 desde 0
  * De derecha a izquierda los indices decrementan de 1 en 1 desde -1
  */
+
+/**
+ * ==================== Tiempo de ejecucion ===================
+ */
+console.log("\nTIEMPO DE EJECUCION");
+function contar(n) {
+  for (let i = 0; i < n; i++) {
+    console.log(i);
+  }
+}
+// Requiere el time y el timeEnd con el mismo parametro, mide la duracion entre la ejecucion de una linea y la otra.
+console.time("Duración");
+contar(5);
+console.timeEnd("Duración");
