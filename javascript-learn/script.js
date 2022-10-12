@@ -740,6 +740,22 @@ const calculadora = new Calculator();
 console.log(calculadora.suma(2, 2));
 
 /**
+ * ==================== Modulos ====================
+ * Se pueden crear y exportar modulos en js de diferentes formas
+ * Es necesario modificar el archivo package.json y añadirle el type: module en algunos casos
+ * 
+ * Ejemplo:
+
+ // module.js
+ export const myExport = "hola"
+ function myFunction() { ... }
+ export default myFunction
+
+ // main.js
+ import myFunction, { myExport } from "/module.js"
+ */
+
+/**
  * ==================== EJEMPLOS ====================
  */
 console.log("\nSUBSTRING MAS LARGO"); // ==================== Substring mas largo de dos cadenas ====================
