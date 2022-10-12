@@ -600,14 +600,19 @@ obtener_localstorage();
  * TC39: grupo que se encarga de darle actualizaciones a ECMASCRIPT
  */
 
-//La multininea tambien es sencible a tabulaciones y para llevarla a cabo con las comillas simples se necesita el \n
-console.log("\nMULTILINEA"); // ==================== Multilinea ====================
+/**
+ * ==================== Multilinea ====================
+ * La multininea tambien es sencible a tabulaciones y para llevarla a cabo con las comillas simples se necesita el \n
+ */
+console.log("\nMULTILINEA"); //
 var multilinea = `esto es un texto 
 con multilinea`;
 console.log(multilinea);
 
-//Asignar valores por defecto
-console.log("\nASIGNAR VALORES POR DEFECTO"); // ==================== Asignar valores por defecto ====================
+/**
+ * ==================== Asignar valores por defecto ====================
+ */
+console.log("\nASIGNAR VALORES POR DEFECTO");
 function newusuario(name, age, country) {
   nameuser = name || "Oscar";
   ageuser = age || 34;
@@ -623,8 +628,10 @@ nuevousuario("Pedro");
 console.log(nameuser, ageuser, countryuser);
 console.log(nameusuario, ageusuario, countryusuario);
 
-//Desestructuracion
-console.log("\nDESESTRUCTURACION"); // ==================== Desestrucutracion ====================
+/**
+ * ==================== Desestrucutracion ====================
+ */
+console.log("\nDESESTRUCTURACION");
 let introduccion04 = ["Hola", "Yo", "soy", "Sarah"];
 let saludo04 = introduccion04[0];
 let nombre04 = introduccion04[3];
@@ -684,8 +691,10 @@ let { nombre15: nombre17 = "Emma", amiga17 = "Annie" } = persona15;
 console.log(nombre17); // "Sarah"
 console.log(amiga17); // "Annie"
 
-//Objetos literales
-console.log("\nOBJETOS LITERALES"); // ==================== Objetos Literales ====================
+/**
+ * ==================== Objetos Literales ====================
+ */
+console.log("\nOBJETOS LITERALES");
 function superusuario(namesuper = "Juan", agesuper = 19, countrysuper = "CH") {
   return {
     namesuper,
@@ -695,12 +704,11 @@ function superusuario(namesuper = "Juan", agesuper = 19, countrysuper = "CH") {
 }
 console.log(superusuario("Pedro"));
 
-//Promesas
 /**
+ * ==================== Promesas ====================
  * Es una forma de trabajar el asincronismo
  * Algo que va a pasar, hoy mañana o nunca
  */
-// ==================== Promesas ====================
 something = true;
 const promesa = () => {
   return new Promise((resolve, reject) => {
@@ -714,13 +722,14 @@ const promesa = () => {
 };
 promesa()
   .then((respuesta) => console.log("\nPROMESAS:", respuesta)) //En caso que se ejecute resolve
-  .catch((error) => console.log("\nPROMESAS:", error)); //En caso que se ejecute reject
+  .catch((error) => console.log("\nPROMESAS:", error)) //En caso que se ejecute reject
+  .finally(() => console.log("\nPROMESAS:", "finalizado")); //En caso que finalice la promesa
 
-//Clases
 /**
+ * ==================== Clases ====================
  * Hereda funciones y atributos
  */
-console.log("\nCLASES"); // ==================== Clases ====================
+console.log("\nCLASES");
 class Calculator {
   // Constructor
   constructor() {
@@ -756,9 +765,9 @@ console.log(calculadora.suma(2, 2));
  */
 
 /**
- * ==================== EJEMPLOS ====================
+ * ==================== Ejemplo: Substring mas largo de dos cadenas ====================
  */
-console.log("\nSUBSTRING MAS LARGO"); // ==================== Substring mas largo de dos cadenas ====================
+console.log("\nSUBSTRING MAS LARGO");
 let X = "HOLA";
 let Y = "OLGA";
 function LCSubStr(X, Y) {
@@ -797,7 +806,10 @@ function LCSubStr(X, Y) {
 }
 console.log(LCSubStr(X, Y));
 
-console.log("\nHISTOGRAMA OPCION 1"); // ==================== Histograma en base a los numeros de un array ====================
+/**
+ * ==================== Ejemplo: Histograma en base a los numeros de un array ====================
+ */
+console.log("\nHISTOGRAMA OPCION 1"); // Opcion 1
 const myArray01 = [1, 1, 1, 1, 1, 2, 2, 3, 3, 5, 8];
 const CantNum = {};
 for (let i = 1; i <= Math.max(...myArray01); i++) {
@@ -806,7 +818,7 @@ for (let i = 1; i <= Math.max(...myArray01); i++) {
 myArray01.forEach((e) => (CantNum[e] += "*"));
 console.log(CantNum);
 
-console.log("\nHISTOGRAMA OPCION 2"); // ==================== Histograma en base a los numeros de un array ====================
+console.log("\nHISTOGRAMA OPCION 2"); // Opcion 2
 myArray02 = [1, 2, 1, 3, 3, 1, 2, 1, 5, 1];
 myArray02.sort();
 var maxArray = Math.max(...myArray02);
@@ -821,3 +833,29 @@ for (i = 1; i <= maxArray; i++) {
   }
   console.log(a + b);
 }
+
+/**
+ * ==================== Expresiones regulares ====================
+ * Se pueden crear expresiones que contienen reglas o patrones para busqueda y manipulacion de cadenas de caracteres
+ */
+console.log("\nEXPRESIONES REGULARES");
+const regex = /(\d{4})-(\d{2})-(\d{2})/;
+const matchers = regex.exec("2022-01-01");
+console.table(matchers);
+
+/**
+ * ==================== Manejo de errores ====================
+
+ try {
+  // Manejar el código
+ } catch (err) {
+  // Se utiliza el parámetro `err`
+ }
+
+ try {
+  // Manejar el código
+ } catch {
+  // Manejar el error sin el parámetro.
+ }
+ 
+ */
