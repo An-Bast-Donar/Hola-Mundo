@@ -857,5 +857,4 @@ console.table(matchers);
  } catch {
   // Manejar el error sin el parámetro.
  }
- 
  */
