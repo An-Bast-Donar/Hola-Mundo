@@ -725,6 +725,25 @@ promesa()
   .catch((error) => console.log("\nPROMESAS:", error)) //En caso que se ejecute reject
   .finally(() => console.log("\nPROMESAS:", "finalizado")); //En caso que finalice la promesa
 
+const promesa1 = Promise.reject("Ups promesa 1 falló");
+const promesa2 = Promise.resolve("Promesa 2");
+const promesa3 = Promise.reject("Ups promesa 3 falló");
+
+// Si una promesa falla devuelve la que fallo
+Promise.all([promesa1, promesa2, promesa3])
+  .then((respuesta) => console.log("\nPROMESAS:", respuesta))
+  .catch((error) => console.log("\nPROMESAS ONLY:", error));
+
+// Devuelve un array con el estado de cada promesa
+Promise.allSettled([promesa1, promesa2, promesa3]).then((respuesta) =>
+  console.log("\nPROMESAS GROUP:", respuesta)
+);
+
+// Retorna la primera promesa resuelta
+Promise.any([promesa1, promesa2, promesa3])
+  .then((respuesta) => console.log("\nPROMESAS FRIST:", respuesta)) // Promise 3
+  .catch((error) => console.log("\nPROMESAS FRIST:", error));
+
 /**
  * ==================== Clases ====================
  * Hereda funciones y atributos
@@ -752,6 +771,7 @@ console.log(calculadora.suma(2, 2));
  * ==================== Modulos ====================
  * Se pueden crear y exportar modulos en js de diferentes formas
  * Es necesario modificar el archivo package.json y añadirle el type: module en algunos casos
+ * Los import de estos modulos pueden ser estaticos o dinamicos dependiendo de los requerimientos de nuestra pagina
  * 
  * Ejemplo:
 
@@ -857,4 +877,133 @@ console.table(matchers);
  } catch {
   // Manejar el error sin el parámetro.
  }
+ */
+
+/**
+ * ==================== Manejo de arreglos avanzado ====================
+ */
+const array20 = [1, 2, [3, 4], 5, 6];
+const result20 = array20.flat();
+result20; // [1,2,3,4,5,6]
+
+const array21 = [1, 2, [3, 4, [5, 6]]];
+const result21 = array21.flat();
+result21; // [1, 2, 3, 4, [5, 6]]
+
+const array23 = [1, 2, [3, 4, [5, 6]]];
+const result23 = array23.flat(2);
+result23; // [1, 2, 3, 4, 5, 6]
+
+const array24 = [1, 2, [3, 4, [5, 6, [7, 8, [9, 10]]]]];
+const result24 = array24.flat(Infinity);
+result24; // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+const strings = ["Nunca pares", "de Aprender"];
+strings.map((string) => string.split(" "));
+// [ [ 'Nunca', 'pares' ], [ 'de', 'Aprender' ] ]
+strings.flatMap((string) => string.split(" "));
+// [ 'Nunca', 'pares', 'de', 'Aprender' ]
+
+const numbers200 = [1, 2, 3, 4];
+numbers200.map((number) => [number * 2]);
+// [[2], [4], [6], [8]]
+numbers200.flatMap((number) => [number * 2]);
+// [2, 4, 6, 8]
+
+// Cuidado, primero hace el map y luego el flat
+const numbers102 = [1, [2, 3], 4, 5];
+numbers102.flatMap((number) => [number * 2]);
+// [ 2, NaN, 8, 10 ]
+// Recuerda: NaN = No a Number
+
+const saludo100 = "      hola      ";
+const result101 = saludo100.trim();
+const result102 = saludo100.trimStart();
+const result103 = saludo100.trimEnd();
+result101; // 'hola'
+result102; // 'hola      '
+result103; // '      hola'
+
+/**
+ * ==================== Optional chaining ====================
+ */
+console.log("\nOPTIONAL CHAINING");
+const people = {
+  gndx: {
+    country: "MX",
+  },
+  ana: {
+    country: "CO",
+  },
+};
+console.log(people?.debeloper?.country); // regresa undefine en caso de no encontrar nada, en vez de regresar un error y romper la app
+
+/**
+ * ==================== Operador Nullish ====================
+ * El operador nullish coalescing (??) consiste en evaluar una variable si es undefined o null para asignarle un valor.
+ * El operador OR (||) evalúa un valor false. Un valor false es aquel que es falso en un contexto booleano, estos son: 0, "" (string vacío), false, NaN, undefined o null.
+ */
+console.log("\nOPERADOR NULLISH");
+const usuario91 = {};
+const nombre91 = usuario91.name ?? "Andres";
+const usuario92 = { name: "Juan" };
+const nombre92 = usuario92.name ?? "Andres";
+console.log(nombre91); // 'Andres'
+console.log(nombre92); // 'Juan'
+
+const id = 0;
+const orId = id || "Sin id";
+const nullishId = id ?? "Sin id";
+console.log(orId); //  'Sin id'
+console.log(nullishId); // 0
+
+/**
+ * ==================== GlobalThis ===================
+ */
+console.log("\nGLOBALTHIS");
+// Ejecuta el siguiente código y observa que muestra
+console.log(window);
+console.log(globalThis);
+
+// En el navegador
+// window === globalThis; // true
+
+// En Node.js
+// global === globalThis; // true
+
+/**
+ * ==================== Separadores numericos y Método replaceAll ===================
+ * Los separadores numéricos ayudan a la legibilidad de cantidades con varias cifras. Se utiliza el caracter guion bajo ( _ ) para separar las cifras, y no afecta a la ejecución del programa.
+ * Lo ideal es separar cada 3 cifras, para visualizar los miles, millones, billones, etc.
+ * El método replaceAll retorna un nuevo string, reemplazando todos los elementos por otro.
+ */
+console.log("\nSEPARADORES NUMERICOS");
+// 🔽 Baja legibilidad
+const numero81 = 3501548945;
+console.log(numero81); // 3501548945
+
+// ✅ Alta legibilidad
+const numero82 = 3_501_548_945;
+console.log(numero82); // 3501548945
+
+const mensaje =
+  "JavaScript es maravilloso, con JavaScript puedo crear el futuro de la web.";
+mensaje.replace("JavaScript", "Python");
+// 'Python es maravilloso, con JavaScript puedo crear el futuro de la web.'
+mensaje.replaceAll("JavaScript", "Python");
+// 'Python es maravilloso, con Python puedo crear el futuro de la web.'
+mensaje.replaceAll(/a/g, "*");
+// 'J*v*Script es m*r*villoso, con J*v*Script puedo cre*r el futuro de l* web.'
+
+/**
+ * ==================== Metodos privados y clases ===================
+ * Los métodos privados consiste en limitar el acceso a propiedades y métodos agregando el caracter numeral (#).
+ * Ejemplo: #valor;
+ * Por defecto, las propiedades y métodos de una clase en JavaScript son públicas, es decir, se puede acceder a ellos fuera de la clase.
+ */
+
+/**
+ * ==================== Indices positivos y negativos ===================
+ * De izquierda a derecha los indices aumentan de 1 en 1 desde 0
+ * De derecha a izquierda los indices decrementan de 1 en 1 desde -1
  */
