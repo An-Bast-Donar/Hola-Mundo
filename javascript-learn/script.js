@@ -696,7 +696,25 @@ function superusuario(namesuper = "Juan", agesuper = 19, countrysuper = "CH") {
 console.log(superusuario("Pedro"));
 
 //Promesas
+/**
+ * Es una forma de trabajar el asincronismo
+ * Algo que va a pasar, hoy mañana o nunca
+ */
 console.log("\nPROMESAS"); // ==================== Promesas ====================
+something = false;
+const promesa = () => {
+  return new Promise((resolve, reject) => {
+    if (something) {
+      //true o false
+      resolve("Se ha resuelto la promesa");
+    } else {
+      reject("Se ha rechazado la promesa");
+    }
+  });
+};
+promesa()
+  .then((respuesta) => console.log(respuesta)) //En caso que se ejecute resolve
+  .catch((error) => console.log(error)); //En caso que se ejecute reject
 
 /**
  * ==================== EJEMPLOS ====================
