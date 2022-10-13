@@ -1050,3 +1050,8 @@ console.timeEnd("Duración");
  * Pagina offline, estrategias de carga con cache
  * Feedback constante al usuario etc etc
  */
+
+/**
+ * ==================== Callback ===================
+ * Funcion que se pasa a otra funcion omo un argumento
+ */
