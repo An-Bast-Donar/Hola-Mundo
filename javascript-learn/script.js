@@ -1021,3 +1021,32 @@ function contar(n) {
 console.time("Duración");
 contar(5);
 console.timeEnd("Duración");
+
+/**
+ * ==================== Dev Tools ===================
+ * Herramientas en el navegador para ayudar con el desarrollo
+ * Permite editar, HTML, CSS
+ * Ver peso de archivos que componen la pagina y el codigo que usa de cada uno de ellos, more tools -> Coverage
+ * Permite interactuar con los elementos con js en la consola, ejemplo, hago referencia a un elemento y lo guardo en una variable y luego le cambio el stilo, etc etc
+ * Permite abrir el codigo desde el navegaor para editarlo desde ahi, sources -> filesystem -> abre la carpeta origen del proyecto, permitir acceso
+ * Permite cambiar el tipo de pantalla en la que visualizo mi web
+ * Me permite probar diferentes bandas de internet
+ * Me permite probar la pagina sin internet, y con caracteristicas de hardware diferentes, permormance
+ * Permite probar con sensores de latitud, longitud, rotacion del dispositivo, etc, more tools -> sensores
+ * Permite ver el paso a paso de lo que se ejecuta en la pagina, despues de disparar un evento u mas, sourse -> event listener breakpoint -> seleccionamos el mouse o cualquier evento
+ * El breakpoint tambien se puede poner haciendo click sobre el numero de la linea en la que queremos hacer breakpoint o de otras formas
+ * Se puede ver las variables y sus estados
+ * Permite ver, servicios, peticiones, tiempos de carga, etc etc, network
+ * Permite grabar a nimaciones, y revisar sus frames, donde hay cuellos de botella, cuales, etc etc
+ * Auditar el proyecto, lighthouse
+ */
+
+/**
+ * ==================== Progressive Web App ===================
+ * Pocos tiempos de carga
+ * Notificaciones
+ * Responsive
+ * Pagina que se le pueda poner un icono en el movil
+ * Pagina offline, estrategias de carga con cache
+ * Feedback constante al usuario etc etc
+ */
