@@ -1065,3 +1065,45 @@ console.timeEnd("Duración");
  * Respuestas 400 error al llamar el endpoint, 401 enpoint o necesita autorizacion, 402 se requiere pago para acceder a la ruta y recibir la info, 404 lo que solicitamos no existe
  * Respuestas 500 el back fallo
  */
+const API_URL = "https://jsonplaceholder.typicode.com";
+
+// Forma de realizar una peticion ajax o consumir un api anteriormente
+const xhr = new XMLHttpRequest();
+function onRequestHandler() {
+  if (this.readyState === 4 && this.status === 200) {
+    console.log("\nAPI REST");
+
+    // 0 = UNSET, no se ha llamado al metodo open
+    // 1 = OPENED, se ha llamado al metodo open
+    // 2 = HEADERS_RECEIVERD, se esta llamando al metodo send()
+    // 3 = LOADING, esta cargando, es decir, esta recibiendo la respuesta
+    // 4 = DONE, se ha completado la operacion
+
+    // console.log(this.response); // Regresa los datos en formato texto
+
+    const data = JSON.parse(this.response);
+    console.log(data);
+
+    //Pintar el api
+    const HTMLResponse1 = document.querySelector("#app1");
+    const tpl = data.map((user) => `<li>${user.name} . ${user.email}</li>`);
+    HTMLResponse1.innerHTML = `<ul>${tpl}</ul>`;
+  }
+}
+xhr.addEventListener("load", onRequestHandler);
+xhr.open("GET", `${API_URL}/users`);
+xhr.send();
+
+// Forma moderna para realizar una peticion ajax o consumir un api
+fetch(`${API_URL}/users`)
+  .then((response) => response.json())
+  .then((users) => {
+    const HTMLResponse2 = document.querySelector("#app2");
+    const ul = document.createElement("ul");
+    users.forEach((user) => {
+      let elem = document.createElement("li");
+      elem.appendChild(document.createTextNode(`${user.name} . ${user.email}`));
+      ul.appendChild(elem);
+    });
+    HTMLResponse2.appendChild(ul);
+  });
