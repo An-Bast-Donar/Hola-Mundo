@@ -1055,3 +1055,13 @@ console.timeEnd("Duración");
  * ==================== Callback ===================
  * Funcion que se pasa a otra funcion omo un argumento
  */
+
+/**
+ * ==================== API Rest ===================
+ * Pueden tener https, cors y auth que pueden ser apiKey o 0Auth
+ * Respuestas 100
+ * Respuestas 200 todo bien
+ * Respuestas 300 el endpoint al que se entra se redirecciona a otra ruta, 307 temporal no se sabe si envia a otra ruta diferente en el futuro, 308 seguridad de que envia a otra ruta siempre
+ * Respuestas 400 error al llamar el endpoint, 401 enpoint o necesita autorizacion, 402 se requiere pago para acceder a la ruta y recibir la info, 404 lo que solicitamos no existe
+ * Respuestas 500 el back fallo
+ */
