@@ -705,8 +705,8 @@ function superusuario(namesuper = "Juan", agesuper = 19, countrysuper = "CH") {
 console.log(superusuario("Pedro"));
 
 /**
- * ==================== Promesas ====================
- * Es una forma de trabajar el asincronismo
+ * ==================== Promesas y Asincronismo ====================
+ * La promesa es una forma de trabajar el asincronismo
  * Algo que va a pasar, hoy mañana o nunca
  */
 something = true;
@@ -743,6 +743,42 @@ Promise.allSettled([promesa1, promesa2, promesa3]).then((respuesta) =>
 Promise.any([promesa1, promesa2, promesa3])
   .then((respuesta) => console.log("\nPROMESAS FRIST:", respuesta)) // Promise 3
   .catch((error) => console.log("\nPROMESAS FRIST:", error));
+
+// La palabra reservada await solo puede usarse dentro de una funcion async
+const datosPrometidos = [
+  {
+    id: 1,
+    title: "Iro Man",
+    year: 2008,
+  },
+  {
+    id: 2,
+    title: "Spiderman: Homecoming",
+    year: 2017,
+  },
+  {
+    id: 3,
+    title: "Avengers: Endgame",
+    year: 2019,
+  },
+];
+
+const getDatosPrometidos = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(datosPrometidos);
+    }, 1500);
+  });
+};
+
+//getDatosPrometidos().then((datosFetched) => console.log("\nPROMESAS AWAIT:", datosFetched));
+async function fetchingData() {
+  try {
+    const datosFetched = await getDatosPrometidos();
+    console.log("\nPROMESAS AWAIT:", datosFetched);
+  } catch (err) {}
+}
+fetchingData();
 
 /**
  * ==================== Clases ====================
