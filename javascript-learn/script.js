@@ -994,7 +994,7 @@ console.log(orId); //  'Sin id'
 console.log(nullishId); // 0
 
 /**
- * ==================== GlobalThis ===================
+ * ==================== GlobalThis ====================
  */
 console.log("\nGLOBALTHIS");
 // Ejecuta el siguiente código y observa que muestra
@@ -1008,7 +1008,7 @@ console.log(globalThis);
 // global === globalThis; // true
 
 /**
- * ==================== Separadores numericos y Método replaceAll ===================
+ * ==================== Separadores numericos y Método replaceAll ====================
  * Los separadores numéricos ayudan a la legibilidad de cantidades con varias cifras. Se utiliza el caracter guion bajo ( _ ) para separar las cifras, y no afecta a la ejecución del programa.
  * Lo ideal es separar cada 3 cifras, para visualizar los miles, millones, billones, etc.
  * El método replaceAll retorna un nuevo string, reemplazando todos los elementos por otro.
@@ -1032,20 +1032,20 @@ mensaje.replaceAll(/a/g, "*");
 // 'J*v*Script es m*r*villoso, con J*v*Script puedo cre*r el futuro de l* web.'
 
 /**
- * ==================== Metodos privados y clases ===================
+ * ==================== Metodos privados y clases ====================
  * Los métodos privados consiste en limitar el acceso a propiedades y métodos agregando el caracter numeral (#).
  * Ejemplo: #valor;
  * Por defecto, las propiedades y métodos de una clase en JavaScript son públicas, es decir, se puede acceder a ellos fuera de la clase.
  */
 
 /**
- * ==================== Indices positivos y negativos ===================
+ * ==================== Indices positivos y negativos ====================
  * De izquierda a derecha los indices aumentan de 1 en 1 desde 0
  * De derecha a izquierda los indices decrementan de 1 en 1 desde -1
  */
 
 /**
- * ==================== Tiempo de ejecucion ===================
+ * ==================== Tiempo de ejecucion ====================
  */
 console.log("\nTIEMPO DE EJECUCION");
 function contar(n) {
@@ -1059,7 +1059,7 @@ contar(5);
 console.timeEnd("Duración");
 
 /**
- * ==================== Dev Tools ===================
+ * ==================== Dev Tools ====================
  * Herramientas en el navegador para ayudar con el desarrollo
  * Permite editar, HTML, CSS
  * Ver peso de archivos que componen la pagina y el codigo que usa de cada uno de ellos, more tools -> Coverage
@@ -1078,7 +1078,7 @@ console.timeEnd("Duración");
  */
 
 /**
- * ==================== Progressive Web App ===================
+ * ==================== Progressive Web App ====================
  * Pocos tiempos de carga
  * Notificaciones
  * Responsive
@@ -1088,12 +1088,12 @@ console.timeEnd("Duración");
  */
 
 /**
- * ==================== Callback ===================
+ * ==================== Callback ====================
  * Funcion que se pasa a otra funcion omo un argumento
  */
 
 /**
- * ==================== API Rest ===================
+ * ==================== API Rest ====================
  * Pueden tener https, cors y auth que pueden ser apiKey o 0Auth
  * Respuestas 100
  * Respuestas 200 todo bien
