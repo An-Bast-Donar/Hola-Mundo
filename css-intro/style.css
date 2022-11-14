@@ -8,7 +8,7 @@ Un doc HTML puede tener multiples CSS.
 /*
 NOTAS
 CSS funciona en base a selectores que referencian un unico o varios elementos dentro de nuestro HTML.
-Los que se escriba de ultimo en nuestro archivo css tiene proridad sobre lo que va antes.
+Lo que se escriba de ultimo en nuestro archivo css tiene proridad sobre lo que va antes.
 Una etiqueta en el HTML puede tener multiples clases de css.
 Dejar el mouse sobre una propiedad, hace que aparezca un link a MDN Reference que contiene informacion sobre la propiedad.
 */
@@ -166,7 +166,7 @@ rem: tamaño de la fuente de nuestra etiqueta raiz, osea la etiqueta html, por d
     background-repeat: repeat-y;
     /*
     Gestiona la poscicion en la cual se empieza a repetir la imagen
-    Recibe la poscicion en x de donde empieza y la poscicion en y, con los valores right, left y center para las poscicion y y top bottom y center para la poscicion x
+    Recibe la poscicion en x de donde empieza y la poscicion en y, con los valores right, left y center para la poscicion y y top, bottom y center para la poscicion x
     tambien se le pueden enviar la poscicion con las demas unidades de medida vistas, px, mm, rem, etc
     */
     background-position: left top;
@@ -280,6 +280,7 @@ Cuando han sido visitados (selector a:visited)
 Cuando se pasa el mouse por encima de el (selector a:hover)
 Cuando se encuentra activo, osea al momento de clickearlo (a:active)
 Se pueden utilizar unos o algunos de estos selectores, pero deben agregarse en este orden, link, visited, hover, active
+Hay mas estados que se pueden modificar, buscarlos e interiorizarlos, recordar que deben escribirse en un orden especifico
 */
 a:link {
     color: blueviolet;
@@ -332,8 +333,8 @@ th {
 }
 
 /*
-Nos permite seleccionar eleventos particulares
-odd: par
+Nos permite seleccionar elementos particulares
+odd: impar
 even: par
 Este selector debe ir antes del selector hover
 */
@@ -692,6 +693,7 @@ Caracteristicas individuales para elementos de css grid hijos del elemento que c
 
 /*
 Animaciones en CSS
+Existen transiciones en css y animaciones en css, cada una con sus propiedades y particularidades diferentes
 */
 .rainbow-boi {
     /*

@@ -29,7 +29,7 @@ header h1 {
 
 section article {
     /*
-    Indica la propiedad a animar, el tiempo y el algoritmo de animacion
+    Indica la propiedad a transitar a otro valor, el tiempo y el algoritmo de animacion
     */
     transition: box-shadow 0.3s ease;
     background-color: #fff;

@@ -188,7 +188,7 @@ var frutas = ["Manzana", "Platano", "Cereza", "Fresa"];
 console.log("\nVALORES DEL ARRAY");
 console.log(frutas, frutas.length, frutas[0]);
 // length es una propiedad del array para obtener su tamaño
-// Accede (por índice) a un elemento del Array. Los arrays iician en "0"
+// Accede (por índice) a un elemento del Array. Los arrays inician en "0"
 
 // Metodos para mutar arrays
 // .push();
@@ -338,7 +338,7 @@ var costoTotal = articulos.reduce(function (totalActual, articulo) {
 console.log(costoTotal);
 
 /**
- * ==================== Atajos para uno a cada variables ====================
+ * ==================== Atajos para uno a cada variable ====================
  */
 console.log("\nATAJOS DE AGREGACION");
 friendsAtYourParty = 0;
@@ -419,7 +419,7 @@ var roundedNumber = Math.round(number);
 console.log(number);
 console.log(roundedNumber);
 
-// Buscar una variable en un
+// Buscar una variable en un string
 var testStringOne = "The quick brown fox jumps over the lazy dog";
 var testStringTwo =
   "Mirror, mirror on the wall, don't say it cause I know I'm cute";
@@ -538,8 +538,8 @@ document
 var caja = document.getElementById("caja-color");
 caja.classList.add("color-verde"); //Añade una clase a mi elemento
 caja.classList.remove("color-verde"); //Remueve una clase de mi elemento
-//caja.classList.toggle('color-verde'); //Dependiendo de si tiene la clase o no, se añade o se remueve
-//caja.classList.contains('color-verde'); //Devuelve true o false dependiendo si tiene la clase por la que preguntamos
+//caja.classList.toggle('color-verde');     /Dependiendo de si tiene la clase o no, se añade o se remueve
+//caja.classList.contains('color-verde');   //Devuelve true o false dependiendo si tiene la clase por la que preguntamos
 
 // Crear un elemento desde cero
 var img = document.createElement("img");
@@ -569,7 +569,7 @@ console.log(Math.PI);
  * Se pueden grabar solo string
  * Existen metoos para grabar objetos
  * Se puede visualizar desde el apartado de aplicacion -> localstore en inspeccionar
- * Si se intemta jalar un item del local storage que no existe, regresara null
+ * Si se intenta jalar un item del local storage que no existe, regresara null
  */
 console.log("\nLOCAL STORAGE");
 function guardar_localstorage() {
@@ -604,7 +604,7 @@ obtener_localstorage();
  * ==================== Multilinea ====================
  * La multininea tambien es sencible a tabulaciones y para llevarla a cabo con las comillas simples se necesita el \n
  */
-console.log("\nMULTILINEA"); //
+console.log("\nMULTILINEA");
 var multilinea = `esto es un texto 
 con multilinea`;
 console.log(multilinea);
